@@ -1,0 +1,249 @@
+{
+	"accessors": [
+		{
+			"bufferView": 0,
+			"byteOffset": 0,
+			"componentType": 5125,
+			"count": 68100,
+			"type": "SCALAR"
+		},
+		{
+			"bufferView": 1,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 13540,
+			"max": [
+				0.999999940395355,
+				0.513971447944641,
+				0.388742506504059
+			],
+			"min": [
+				-1.0,
+				-0.513971507549286,
+				-0.388742506504059
+			],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 13540,
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 13540,
+			"type": "VEC2"
+		}
+	],
+	"asset": {
+		"copyright": "Copyright 2020 Shopify, Inc. CC BY 4.0 https://creativecommons.org/licenses/by/4.0/",
+		"generator": "Visual Studio Code with glTF Tools",
+		"version": "2.0"
+	},
+	"bufferViews": [
+		{
+			"buffer": 0,
+			"byteLength": 272400,
+			"byteOffset": 0,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 162480,
+			"byteOffset": 272400,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 162480,
+			"byteOffset": 434880,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 108320,
+			"byteOffset": 597360,
+			"target": 34962
+		}
+	],
+	"buffers": [
+		{
+			"byteLength": 725000,
+			"uri": "Shoe.bin"
+		}
+	],
+	"cameras": [
+		{
+			"name": "camera0",
+			"perspective": {
+				"yfov": 0.6,
+				"zfar": 6426.20703125,
+				"znear": 0.1
+			},
+			"type": "perspective"
+		},
+		{
+			"name": "camera1",
+			"perspective": {
+				"yfov": 0.6,
+				"zfar": 6426.20703125,
+				"znear": 0.01
+			},
+			"type": "perspective"
+		},
+		{
+			"name": "camera2",
+			"perspective": {
+				"yfov": 0.6,
+				"zfar": 6426.20703125,
+				"znear": 0.01
+			},
+			"type": "perspective"
+		}
+	],
+	"images": [
+		{
+			"mimeType": "image/png",
+			"uri": "DefaultMaterial_baseColor.png"
+		},
+		{
+			"mimeType": "image/png",
+			"uri": "DefaultMaterial_occlusionRoughnessMetallic.png"
+		},
+		{
+			"mimeType": "image/png",
+			"uri": "DefaultMaterial_normal.png"
+		}
+	],
+	"materials": [
+		{
+			"alphaMode": "OPAQUE",
+			"name": "DefaultMaterial",
+			"normalTexture": {
+				"index": 2
+			},
+			"occlusionTexture": {
+				"index": 1
+			},
+			"pbrMetallicRoughness": {
+				"baseColorTexture": {
+					"index": 0
+				},
+				"metallicRoughnessTexture": {
+					"index": 1
+				}
+			}
+		}
+	],
+	"meshes": [
+		{
+			"name": "Shoe",
+			"primitives": [
+				{
+					"attributes": {
+						"NORMAL": 2,
+						"POSITION": 1,
+						"TEXCOORD_0": 3
+					},
+					"indices": 0,
+					"material": 0,
+					"mode": 4
+				}
+			]
+		}
+	],
+	"nodes": [
+		{
+			"mesh": 0,
+			"name": "Shoe",
+			"scale": [
+				0.1,
+				0.1,
+				0.1
+			]
+		},
+		{
+			"camera": 0,
+			"name": "camera0",
+			"rotation": [
+				-0.07296540211462794,
+				0.30462956906339433,
+				0.02481192517648099,
+				0.9493477993420208
+			],
+			"translation": [
+				0.18,
+				0.03,
+				0.226
+			]
+		},
+		{
+			"camera": 1,
+			"name": "camera1",
+			"rotation": [
+				-0.07296540211462794,
+				0.30462956906339433,
+				0.02481192517648099,
+				0.9493477993420208
+			],
+			"translation": [
+				0.09,
+				-0.032,
+				0.05
+			]
+		},
+		{
+			"camera": 2,
+			"name": "camera2",
+			"rotation": [
+				-0.07210511829508098,
+				0.33773569418817556,
+				0.024519385189822617,
+				0.9381547060782655
+			],
+			"translation": [
+				0.03,
+				0.04,
+				0.07
+			]
+		}
+	],
+	"samplers": [
+		{
+			"magFilter": 9729,
+			"minFilter": 9985,
+			"wrapS": 10497,
+			"wrapT": 10497
+		}
+	],
+	"scene": 0,
+	"scenes": [
+		{
+			"name": "Scene",
+			"nodes": [
+				0,
+				1,
+				2,
+				3
+			]
+		}
+	],
+	"textures": [
+		{
+			"sampler": 0,
+			"source": 0
+		},
+		{
+			"sampler": 0,
+			"source": 1
+		},
+		{
+			"sampler": 0,
+			"source": 2
+		}
+	]
+}

@@ -1,0 +1,75 @@
+// Copyright (c) 2013-2021 Khronos Group.
+//
+// SPDX-License-Identifier: CC-BY-4.0
+
+// :regtitle: is explained in
+// https://discuss.asciidoctor.org/How-to-add-markup-to-author-information-in-document-title-td6488.html
+= 3D Commerce{tmtitle} Certification Contributors
+:tmtitle: pass:q,r[^™^]
+:regtitle: pass:q,r[^®^]
+The Khronos{regtitle} 3D Commerce Working Group
+:data-uri:
+:icons: font
+:toc2:
+:toclevels: 10
+:sectnumlevels: 10
+:max-width: 100%
+:numbered:
+:source-highlighter: coderay
+:title-logo-image: image:./images/3DCommerce.png[Logo,pdfwidth=4in,align=right]
+:stem:
+
+// This causes cross references to chapters, sections, and tables to be
+// rendered as "Section A.B" (for example) rather than rendering the reference
+// as the text of the section title.  It also enables cross references to
+// [source] blocks as "Listing N", but only if the [source] block has a title.
+:xrefstyle: short
+:listing-caption: Listing
+
+// Table of contents is inserted here
+toc::[]
+
+:leveloffset: 1
+
+This document is (c) 2021, Khronos Group. Usage and license details are at the end of the document.
+
+[[contributors]]
+= Contributors
+The contributors to the 3D Commerce{tmtitle} Certification Program are listed here. All of these individuals contributed to one or more aspects of the program by writing or reviewing documentation, developing models, developing test criteria, or leadership of the team.
+
+**Certification TSG Chairs**
+
+* Leonard Daly, 3D Commerce WG Secretary; Independent (Daly Realism)
+* Ashleigh Miller; Amazon Corporate LLC
+* Sally Huang, Former Co-Chair; Independent (Houzz)
+* Chris Joel, Former Co-Chair; Google, Inc.
+
+**Members**
+
+* François Guthmann; Dassault Systèmes
+* Aurélien Vaysset; Emersya
+* Nils Carlen; IKEA Communications AB
+* Rickard Sahlin; IKEA Communications AB
+* Fabrizio Dini; inVRsion SRL
+* Thomas Lucchini; Microsoft Corporation
+* Patrick Ryan; Microsoft Corporation
+* Neil Trevett, Khronos Group President; NVIDIA
+* Michael Badillo; Samsung Electronics
+* Laszlo Gombos; Samsung Research Americas
+* Duncan Knarr; Samsung
+* Daniel Beauchamp; Shopify, Inc.
+* Byron Delgado; Shopify, Inc.
+* Thomas Huang, 3D Commerce WG Vice-Chair; Target
+* Norbert Nopper; UX3D
+* Eric Chadwick; Wayfair
+* Shrenik Sadalgi, 3D Commerce WG Chair; Wayfair
+
+= Copyright and License
+Copyright 2021, The Khronos Group Inc.
+This Document is protected by copyright laws and contains material proprietary to Khronos. Except as described by these terms, it or any components may not be reproduced, republished, distributed, transmitted, displayed, broadcast or otherwise exploited in any manner without the express prior written permission of Khronos.
+
+Khronos grants a conditional copyright license to use and reproduce the unmodified Document for any purpose, without fee or royalty, EXCEPT no licenses to any patent, trademark or other intellectual property rights are granted under these terms.
+
+Khronos makes no, and expressly disclaims any, representations or warranties, express or implied, regarding this Document, including, without limitation: merchantability, fitness for a particular purpose, non-infringement of any intellectual property, correctness, accuracy, completeness, timeliness, and reliability. Under no circumstances will Khronos, or any of its Promoters, Contributors or Members, or their respective partners, officers, directors, employees, agents or representatives be liable for any damages, whether direct, indirect, special or consequential damages for lost revenues, lost profits, or otherwise, arising from or in connection with these materials.
+
+Khronos® and Vulkan® are registered trademarks, and ANARI™, WebGL™, glTF™, NNEF™, OpenVX™, SPIR™, SPIR-V™, SYCL™, OpenVG™ and 3D Commerce™ are trademarks of The Khronos Group Inc. OpenXR™ is a trademark owned by The Khronos Group Inc. and is registered as a trademark in China, the European Union, Japan and the United Kingdom. OpenCL™ is a trademark of Apple Inc. and OpenGL® is a registered trademark and the OpenGL ES™ and OpenGL SC™ logos are trademarks of Hewlett Packard Enterprise used under license by Khronos. ASTC is a trademark of ARM Holdings PLC. All other product names, trademarks, and/or company names are used solely for identification and belong to their respective owners.

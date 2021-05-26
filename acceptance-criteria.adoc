@@ -1,0 +1,301 @@
+// Copyright (c) 2013-2021 Khronos Group.
+//
+// SPDX-License-Identifier: CC-BY-4.0
+
+// :regtitle: is explained in
+// https://discuss.asciidoctor.org/How-to-add-markup-to-author-information-in-document-title-td6488.html
+= 3D Commerce{tmtitle} Certification Acceptance Criteria V1.0
+:tmtitle: pass:q,r[^™^]
+:regtitle: pass:q,r[^®^]
+The Khronos{regtitle} 3D Commerce Working Group
+:data-uri:
+:icons: font
+:toc2:
+:toclevels: 10
+:sectnumlevels: 10
+:max-width: 100%
+:numbered:
+:source-highlighter: coderay
+:title-logo-image: image:./images/3DCommerce.png[Logo,pdfwidth=4in,align=right]
+:stem:
+
+// This causes cross references to chapters, sections, and tables to be
+// rendered as "Section A.B" (for example) rather than rendering the reference
+// as the text of the section title.  It also enables cross references to
+// [source] blocks as "Listing N", but only if the [source] block has a title.
+:xrefstyle: short
+:listing-caption: Listing
+
+// Table of contents is inserted here
+toc::[]
+
+:leveloffset: 1
+
+This document describes the criteria for Certification Acceptance. The features for acceptance of the rendered image is described for each model.
+
+This document is used by the Certification Review Team to guide their evaluation of a submitted set of rendered images to determine if the results are certified. This document is part of the Certification Program1 and knowledge and action of that Program is assumed.
+This document is (c) 2021, Khronos Group. Usage and license details are at the end of the document.
+
+[[introduction]]
+= Introduction
+This document is to guide the evaluators of 3D Commerce certification submissions when determining if a submission meets the criteria for certification. It should be used by certificants to ensure their submissions meet all of these requirements. All submissions must meet all criteria specified in this document except where a specific exception is documented and accepted. A submission may be rejected for reasons not included here. Those rejections will be well-documented and can be appealed to the 3D Commerce Working Group.
+The general rendered image requirements are described. These are taken directly from the Test Plan document (*link tbd*) and those are considered authoritative. The minimal acceptance criteria is described for each model separately. The models are designed to test a breadth of rendering capabilities.
+
+[[rendered-inmage-requirements]]
+= Rendered Image Requirements
+The Certification Program Test Plan document defines the detailed requirements for generating the certification images. This is done in Section 4. Unless otherwise specified, all models are lit with a neutral image-base-light (IBL) and are displayed against a uniform white background. All certification images are at least 1024x1024 preferred size) displayed according to the embedded cameras. The five retail models have three cameras each. One of the analytical models (spheres) is displayed in four different IBLs. All certification images need to be created according to the rules specified in the Test Plan document.
+
+[[models-criteria]]
+= Models Criteria
+Each model is separately listed with a discussion of the criteria for certification for each.
+
+[[analytical-test-objects]]
+== Analytical Test Objects
+Evaluation Criteria: Analytical test object renders will be evaluated for color parity and material behavior. The Render Creation Document includes information and recommendations for calibration. A maximum of 5% deviation from Reference Renders sRGB pixel values is allowed. Additionally the behavior of metallic and roughness values on the two bottom rows of sphere and cube objects should display similarly, exhibiting the expected PBR material qualities and representing the full range of roughness from not at all to fully rough.
+
+[[analytical-spheres]]
+=== Analytical Spheres
+
+.Colored Spheres with Neutral IBL
+image:./images/Reference/rr-AnalyticalSpheres.png[pdfwidth=7in,align=left]
+
+_A collection of colored spheres with neutral IBL._
+
+.Colored Spheres with Cannon IBL
+image:./images/Reference/rr-AnalyticalSpheres-Cannon.png[pdfwidth=7in,align=left]
+
+_A collection of colored spheres with cannon IBL._
+
+.Colored Spheres with Street IBL
+image:./images/Reference/rr-AnalyticalSpheres-Street.png[pdfwidth=7in,align=left]
+
+_A collection of colored spheres with street scene IBL._
+
+.Colored Spheres with Studio IBL
+image:./images/Reference/rr-AnalyticalSpheres-Studio.png[pdfwidth=7in,align=left]
+_A collection of colored spheres with studio lighting IBL._
+
+
+[[analytical-cubes]]
+=== Analytical Cubes
+
+.Colored Cubes with Neutral IBL
+image:./images/Reference/rr-AnalyticalCubes.png[pdfwidth=7in,align=left]
+
+_A collection of colored cubes with neutral IBL. Cubes show a flat color over the surface compared to the spheres. The base color of each cube is the same as the corresponding sphere._
+
+[[analytical-grayscale]]
+=== Analytical Grayscale
+
+.Grayscale Bars with Neutral IBL
+image:./images/Reference/rr-AnalyticalGrayscale.png[pdfwidth=7in,align=left]
+
+_A collection of grayscale bars with neutral IBL._
+
+[[mixer]]
+== Mixer
+
+.Mixer Full View
+image:./images/Reference/rr-Mixer-0.png[pdfwidth=7in,align-left]
+
+_Mixer model in full view. This is the view from camera0._
+
+[[mixer-criteria]]
+=== Mixer - Criteria
+* The Mixer should be using a PBR Metallic Roughness material to ensure the materials appear correct.
+* Since most of this model is metallic, it’s important that the material be correct in order to get the highlights just right.
+* Micro Details: This model has very subtle imperfections that make it easy to miss from afar but when rendered, those details help to showcase what type of material is being used, Metal, Hard Plastic, etc.
+
+[[mixer-metallic]]
+=== Mixer - Metallic
+* Material Accuracy: When moving the environment around the model, you’ll notice areas that catch light and that the environment reflected in the metal pieces are more apparent. These hotspots and clearer reflections help determine the right level of metalness needed.
+* Reflections: Another way to see if the metalness is correct, is to see how much of the environment can be reflected. The front knob and mixer blade, are more reflective than the bowl and the band going around the mixer.
+
+.Mixer Head
+image:./images/Reference/rr-Mixer-1.png[pdfwidth=7in,align-left]
+
+_Mixer model showing different metalic types. This is the view from camera1._
+
+.Mixer Base
+image:./images/Reference/rr-Mixer-2.png[pdfwidth=7in,align-left]
+
+_Mixer model showing painted metal base. This is the view from camera2._
+
+[[shoe]]
+== Shoe
+
+.Shoe Full View
+image:./images/Reference/rr-Shoe-0.png[pdfwidth=7in,align-left]
+
+_Shoe model in full view. This is the view from camera0._
+
+[[shoe-criteria]
+=== Shoe - Criteria
+* The shoe should be using a PBR Metallic Roughness material to ensure the materials on the shoe appear correct
+* The top of the shoe is using a mesh like material with a normal map that creates the appearance of indentations
+* The sole of the shoe uses the normal map in the opposite direction to create a ripple or bubble like effect to help denote that it is foam.
+* Inside the shoe, there is a subtle bumping to help emphasize the more felt like material.
+* All of the pieces have a subtle change in roughness and metalness but this is more obvious in the laces. The laces have a sheen on them that catch light.
+
+[[shoe-normal-map]]
+=== Shoe - Normal Map
+* Small indents for the mesh as well as pebbling on the foam sole help to create nuance in materials that are all soft
+
+.Shoe Sidewall Detail
+image:./images/Reference/rr-Shoe-1.png[pdfwidth=7in,align-left]
+
+_Shoe model showing the sole and side in detail. This is the view from camera1._
+
+[[shoe-metal-roughness]]
+=== Shoe - Metal + Roughness
+* The subtle changes in the different materials used help to make it obvious what the different panels of the shoe are made of. The Roughness and Metal changes also help to make the different versions of black more obvious as well.
+
+.Shoe Laces and Tounge
+image:./images/Reference/rr-Shoe-2.png[pdfwidth=7in,align-left]
+
+_Shoe model showing detail of laces and tounge. This is the view from camera2._
+
+[[wicker-chair]]
+== Wicker Chair
+
+.Wicker Chair Full View
+image:./images/Reference/rr-WickerChair-0.png[pdfwidth=7in,align-left]
+
+_Full view of the wicker chair from camera0. The back is modeled and textured using alpha transparency._
+
+[[wicker-chair-criteria]]
+=== WickerChair - Criteria
+* WickerChair should show Alpha Coverage transparency in Blend mode, for the fine curvy wicker pattern.
+* Depth sorting should be correct; the inside of the chair should be rendered before the outside.
+* Normal map for the cushion should show correct shading. See screenshots below.
+
+[[wicker-chair-transparency]]
+=== WickerChair - Transparency
+The curvy wicker texture should use alpha-as-coverage in Alpha Blend mode, and should show correct depth sorting.
+
+.Chair Wicker Close-Up
+image:./images/Reference/rr-WickerChair-1.png[pdfwidth=7in,align-left]
+
+_TBD (camera1)_
+
+The correct transparency mode is BLEND which shows soft edges (above). The incorrect transparency mode is MASK which has abrupt hard edges (below).
+
+The incorrect transparency mode Alpha Test, which has abrupt hard edges.
+
+![](WARN_REPLACE_IMG_URL)
+A closeup showing incorrect depth sorting (left) versus correct depth sorting (right). The larger curvy texture on the outside surface should render in front of the smaller texture on the inside surface.
+
+[[wicker-chair-normal-map]]
+=== WickerChair - Normal Map
+![](WARN_REPLACE_IMG_URL)
+
+[glTF Sample Viewer](https://github.khronos.org/glTF-Sample-Viewer-Release/), 1024x1024, neutral IBL, exposure +1, camera2.
+
+.Wicker Chair Cushion Close-Up
+image:./images/Reference/rr-WickerChair-2.png[pdfwidth=7in,align-left]
+_TBD (camera2)_
+
+Normal map on the red cushion shows correct tangent basis for the normal map. The wrinkles are rendered as indentations, and the wrinkles are shaded consistently across UV borders.
+
+![](WARN_REPLACE_IMG_URL)
+
+Normal map showing an incorrect tangent basis. The green channel of the normal map is being shaded incorrectly, causing abrupt shading changes where the wrinkles cross the UV seam.
+
+![](WARN_REPLACE_IMG_URL)
+
+Normal map showing a different incorrect tangent basis. The red channel of the normal map is shading incorrectly, causing abrupt shading changes across the UV seam (lower circles) and the wrinkles to look like hills rather than valleys (upper circle).
+
+[[tennis-racquet]]
+== Tennis Racquet
+
+https://gitlab.khronos.org/3dcommerce/certification-models/-/tree/master/TennisRacquet[Model]
+
+.Tennis Racquet Full View
+image:./images/Reference/rr-TennisRacquet-0.png[pdfwidth=7in,align-left]
+
+_Full view of the tennis raquet from camera0._
+
+[[tennis-racquet-criteria]]
+=== TennisRacquet - Criteria
+* TennisRacquet strings should show alpha blend transparency on the translucent strings
+ * Strings should appear translucent outside of the blue star area
+* TennisRacquet frame should show Normal Map, Occlusion Map, and PBR Metallic Roughness material displaying the carbon fiber texture
+ * The frame should appear black with a visible shiny carbon fiber texture
+* TennisRacquet handle should show Normal Map, Occlusion Map, and PBR Metallic Roughness material displaying the leather grip texture
+ * The handle should appear black with a visible leather texture
+
+.Tennis Racquet Strings Close-Up
+image:./images/Reference/rr-TennisRacquet-1.png[pdfwidth=7in,align-left]
+
+_Close up of the strings using alpha blending as shown by camera1._
+
+Alpha blend on strings: Blue paint is opaque, white strings are translucent
+
+.Tennis Racquet Grip Close-Up
+image:./images/Reference/rr-TennisRacquet-2.png[pdfwidth=7in,align-left]
+
+_Close up of the grip and frame from camera2. The frame appearance is created with normal, occlusion, and PBR metallic roughness material for the carbon fiber frame. The leather grip texture is achieved with normal, occlusion, and PBR metallic roughness._
+
+using alpha blending as shown by camera2._
+
+[[green-chair]]
+== Green Chair
+*Asset re-uploaded with more cameras, awaiting merge in gitlab.*
+
+[[green-chair-criteria]]
+=== Green Chair - Criteria
+* The Green Chair is designed to showcase the KHR_Texture_Transform extension, examples of what this model would look like without this extension enabled - See screenshots below.
+* The model should be using a PBR metallic roughness material to ensure the materials appear correct.
+* This model has subtle details such as the green and brown fabric using normal maps, these should be seen when previewing the model up-close using the embedded scene cameras.
+
+.Green Chair Full View
+image:./images/Reference/rr-GreenChair-0.png[pdfwidth=7in,align-left]
+
+_Green chair model in full view. This is the view from camera0._
+
+Using the first camera to get a close-up shot of the model, there should be visible tiling and fine details in the fabric and wood. These details would otherwise be lost without the KHR_Texture_Transform extension enabled.
+
+.Green Chair Texture Transform
+image:./images/Reference/rr-GreenChair-1.png[pdfwidth=7in,align-left]
+
+_Green chair model showing detail of correct texture transform in the green material and wood grain in chair arm. This is the view from camera1._
+
+Above picture illustrates one of the close-up cameras with the extension enabled or disabled on the model. Important texture fidelity and consistency is lost.
+
+Using the second camera to get a close-up shot of the model, there should be visible tiling and fine details in the fabric and wood. These details would otherwise be lost without the KHR_Texture_Transform extension enabled. The brown fabric should also carry a subtle tiled normal-map texture, enhancing the material appearance of the chair.
+
+.Green Chair Texture Transform
+image:./images/Reference/rr-GreenChair-2.png[pdfwidth=7in,align-left]
+
+_Green chair model showing another detail of correct texture transform in the green material and wood grain in chair arm. This is the view from camera2._
+
+Above picture illustrates the region under the chair without the transformation extension enabled. When the extension is not working as intended, this area will display a texture transformation several times larger than intended for the brown fabric in particular as seen above.
+
+Using the User camera, the wood-laquer on the armchair should be clearly visible when using the neutral IBL, as a semi-matte finish.
+
+[[copyright-license]]
+= Copyright and License
+
+[[document]]
+== Document
+Copyright 2021, The Khronos Group Inc.
+This Document is protected by copyright laws and contains material proprietary to Khronos. Except as described by these terms, it or any components may not be reproduced, republished, distributed, transmitted, displayed, broadcast or otherwise exploited in any manner without the express prior written permission of Khronos.
+
+Khronos grants a conditional copyright license to use and reproduce the unmodified Document for any purpose, without fee or royalty, EXCEPT no licenses to any patent, trademark or other intellectual property rights are granted under these terms.
+
+Khronos makes no, and expressly disclaims any, representations or warranties, express or implied, regarding this Document, including, without limitation: merchantability, fitness for a particular purpose, non-infringement of any intellectual property, correctness, accuracy, completeness, timeliness, and reliability. Under no circumstances will Khronos, or any of its Promoters, Contributors or Members, or their respective partners, officers, directors, employees, agents or representatives be liable for any damages, whether direct, indirect, special or consequential damages for lost revenues, lost profits, or otherwise, arising from or in connection with these materials.
+
+Khronos® and Vulkan® are registered trademarks, and ANARI™, WebGL™, glTF™, NNEF™, OpenVX™, SPIR™, SPIR-V™, SYCL™, OpenVG™ and 3D Commerce™ are trademarks of The Khronos Group Inc. OpenXR™ is a trademark owned by The Khronos Group Inc. and is registered as a trademark in China, the European Union, Japan and the United Kingdom. OpenCL™ is a trademark of Apple Inc. and OpenGL® is a registered trademark and the OpenGL ES™ and OpenGL SC™ logos are trademarks of Hewlett Packard Enterprise used under license by Khronos. ASTC is a trademark of ARM Holdings PLC. All other product names, trademarks, and/or company names are used solely for identification and belong to their respective owners.
+
+[[models]]
+== Models
+
+All of the models, textures, and images of 3D objects are licensed as https://creativecommons.org/licenses/by/4.0/[CC BY 4.0 International].
+
+The models are copyright by various creators.
+
+* **Mixer:** Copyright 2020, Shopify. 
+* **Shoe:**  Copyright 2020, Shopify. 
+* **Wicker Chair:** Copyright 2020, Wayfair LLC. Model and textures by Eric Chadwick.
+* **Tennis Raquet:** Copyright 2020, Samsung Research America. Model and textures by Duncan Knarr.
+* **Green Chair:** Copyright 2020, IKEA. 
