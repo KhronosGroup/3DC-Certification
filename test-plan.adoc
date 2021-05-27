@@ -84,7 +84,7 @@ To continue all of the above steps must be successfully completed.
    .. Any necessary Waiver Statements to explain deviance from expected results
    .. Submission type information
 
-       ... Tested: complete set of test results create by running the Test Package
+       ... Tested: complete set of test results created by running the Test Package
        ... Reference: a link to a Tested Submission from the same Certificant
 7. The version of the Test Suite you are using in 3 (above).
 8. The ZIP (.zip) or TarBall (.tar.gz or .tgz) file containing the test results as described below.
