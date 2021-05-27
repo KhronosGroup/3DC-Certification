@@ -60,6 +60,7 @@ The contributors to the 3D Commerce{tmtitle} Certification Program are listed he
 * Daniel Beauchamp; Shopify, Inc.
 * Byron Delgado; Shopify, Inc.
 * Thomas Huang, 3D Commerce WG Vice-Chair; Target
+* Andreas Atteneder; Unity Technologies
 * Norbert Nopper; UX3D
 * Eric Chadwick; Wayfair
 * Shrenik Sadalgi, 3D Commerce WG Chair; Wayfair
