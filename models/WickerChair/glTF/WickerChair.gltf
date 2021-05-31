@@ -1,0 +1,437 @@
+{
+	"accessors": [
+		{
+			"bufferView": 0,
+			"byteOffset": 0,
+			"componentType": 5123,
+			"count": 50760,
+			"name": "accessorIndices",
+			"type": "SCALAR"
+		},
+		{
+			"bufferView": 1,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 11548,
+			"max": [
+				0.673201561,
+				1.88758492,
+				0.5124495
+			],
+			"min": [
+				-0.673201561,
+				-0.0008982979,
+				-0.5156886
+			],
+			"name": "accessorPositions",
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 11548,
+			"name": "accessorNormals",
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 11548,
+			"name": "accessorUVs",
+			"type": "VEC2"
+		},
+		{
+			"bufferView": 4,
+			"byteOffset": 0,
+			"componentType": 5123,
+			"count": 2100,
+			"name": "accessorIndices",
+			"type": "SCALAR"
+		},
+		{
+			"bufferView": 5,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 376,
+			"max": [
+				0.657506,
+				1.52840531,
+				0.472367972
+			],
+			"min": [
+				-0.654081345,
+				0.2933038,
+				-0.4346338
+			],
+			"name": "accessorPositions",
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 6,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 376,
+			"name": "accessorNormals",
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 7,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 376,
+			"name": "accessorUVs",
+			"type": "VEC2"
+		},
+		{
+			"bufferView": 8,
+			"byteOffset": 0,
+			"componentType": 5123,
+			"count": 2100,
+			"name": "accessorIndices",
+			"type": "SCALAR"
+		},
+		{
+			"bufferView": 9,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 376,
+			"max": [
+				0.657506,
+				1.52840531,
+				0.472367972
+			],
+			"min": [
+				-0.654081345,
+				0.2933038,
+				-0.4346338
+			],
+			"name": "accessorPositions",
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 10,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 376,
+			"name": "accessorNormals",
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 11,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 376,
+			"name": "accessorUVs",
+			"type": "VEC2"
+		}
+	],
+	"asset": {
+		"copyright": "Copyright 2021 Wayfair LLC. CC BY 4.0 International https://creativecommons.org/licenses/by/4.0/",
+		"generator": "Visual Studio Code with glTF Tools extension",
+		"version": "2.0"
+	},
+	"bufferViews": [
+		{
+			"buffer": 0,
+			"byteLength": 101520,
+			"byteOffset": 0
+		},
+		{
+			"buffer": 0,
+			"byteLength": 138576,
+			"byteOffset": 101520,
+			"byteStride": 12
+		},
+		{
+			"buffer": 0,
+			"byteLength": 138576,
+			"byteOffset": 240096,
+			"byteStride": 12
+		},
+		{
+			"buffer": 0,
+			"byteLength": 92384,
+			"byteOffset": 378672,
+			"byteStride": 8
+		},
+		{
+			"buffer": 0,
+			"byteLength": 4200,
+			"byteOffset": 471056
+		},
+		{
+			"buffer": 0,
+			"byteLength": 4512,
+			"byteOffset": 475256,
+			"byteStride": 12
+		},
+		{
+			"buffer": 0,
+			"byteLength": 4512,
+			"byteOffset": 479768,
+			"byteStride": 12
+		},
+		{
+			"buffer": 0,
+			"byteLength": 3008,
+			"byteOffset": 484280,
+			"byteStride": 8
+		},
+		{
+			"buffer": 0,
+			"byteLength": 4200,
+			"byteOffset": 487288
+		},
+		{
+			"buffer": 0,
+			"byteLength": 4512,
+			"byteOffset": 491488,
+			"byteStride": 12
+		},
+		{
+			"buffer": 0,
+			"byteLength": 4512,
+			"byteOffset": 496000,
+			"byteStride": 12
+		},
+		{
+			"buffer": 0,
+			"byteLength": 3008,
+			"byteOffset": 500512,
+			"byteStride": 8
+		}
+	],
+	"buffers": [
+		{
+			"byteLength": 503520,
+			"uri": "WickerChair.bin"
+		}
+	],
+	"cameras": [
+		{
+			"name": "camera0",
+			"perspective": {
+				"yfov": 0.8,
+				"zfar": 458.45831298828125,
+				"znear": 0.04584583267569542
+			},
+			"type": "perspective"
+		},
+		{
+			"name": "camera1",
+			"perspective": {
+				"yfov": 0.8,
+				"zfar": 458.45831298828125,
+				"znear": 0.04584583267569542
+			},
+			"type": "perspective"
+		},
+		{
+			"name": "camera2",
+			"perspective": {
+				"yfov": 0.8,
+				"zfar": 458.45831298828125,
+				"znear": 0.04584583267569542
+			},
+			"type": "perspective"
+		}
+	],
+	"images": [
+		{
+			"mimeType": "image/png",
+			"uri": "WickerChair_Normal.png"
+		},
+		{
+			"mimeType": "image/jpeg",
+			"uri": "WickerChair_ORM.jpg"
+		},
+		{
+			"mimeType": "image/png",
+			"uri": "WickerChair_BasecolorAlpha.png"
+		}
+	],
+	"materials": [
+		{
+			"name": "WickerChair",
+			"normalTexture": {
+				"index": 0
+			},
+			"occlusionTexture": {
+				"index": 1
+			},
+			"pbrMetallicRoughness": {
+				"baseColorTexture": {
+					"index": 2
+				},
+				"metallicRoughnessTexture": {
+					"index": 1
+				}
+			}
+		},
+		{
+			"alphaMode": "BLEND",
+			"name": "WickerChair_Alpha",
+			"normalTexture": {
+				"index": 0
+			},
+			"occlusionTexture": {
+				"index": 1
+			},
+			"pbrMetallicRoughness": {
+				"baseColorTexture": {
+					"index": 2
+				},
+				"metallicRoughnessTexture": {
+					"index": 1
+				}
+			}
+		}
+	],
+	"meshes": [
+		{
+			"name": "WickerChair",
+			"primitives": [
+				{
+					"attributes": {
+						"NORMAL": 2,
+						"POSITION": 1,
+						"TEXCOORD_0": 3
+					},
+					"indices": 0,
+					"material": 0,
+					"mode": 4
+				}
+			]
+		},
+		{
+			"name": "WickerChair_alpha_inside",
+			"primitives": [
+				{
+					"attributes": {
+						"NORMAL": 6,
+						"POSITION": 5,
+						"TEXCOORD_0": 7
+					},
+					"indices": 4,
+					"material": 1,
+					"mode": 4
+				}
+			]
+		},
+		{
+			"name": "WickerChair_alpha_outside",
+			"primitives": [
+				{
+					"attributes": {
+						"NORMAL": 10,
+						"POSITION": 9,
+						"TEXCOORD_0": 11
+					},
+					"indices": 8,
+					"material": 1,
+					"mode": 4
+				}
+			]
+		}
+	],
+	"nodes": [
+		{
+			"children": [
+				1,
+				2
+			],
+			"mesh": 0,
+			"name": "WickerChair"
+		},
+		{
+			"mesh": 1,
+			"name": "WickerChair_alpha_inside"
+		},
+		{
+			"mesh": 2,
+			"name": "WickerChair_alpha_outside"
+		},
+		{
+			"camera": 0,
+			"name": "camera0",
+			"rotation": [
+				-0.026044281373680367,
+				0.4497206539177116,
+				0.013120579620989954,
+				0.8926930487227757
+			],
+			"translation": [
+				2.1,
+				1,
+				1.6
+			]
+		},
+		{
+			"camera": 1,
+			"name": "camera1",
+			"rotation": [
+				1.7743989716115477e-07,
+				0.5274146085282319,
+				-1.1015007334752174e-07,
+				0.8496080453426559
+			],
+			"translation": [
+				0.9110837578773499,
+				0.9938328266143799,
+				0.3279617726802826
+			]
+		},
+		{
+			"camera": 2,
+			"name": "camera2",
+			"rotation": [
+				-0.09748415210695915,
+				0.1391380920094347,
+				0.013765186504634477,
+				0.9853669119066532
+			],
+			"translation": [
+				0.43754512071609497,
+				0.6492090821266174,
+				0.8318555951118469
+			]
+		}
+	],
+	"samplers": [
+		{
+			"magFilter": 9729,
+			"minFilter": 9987
+		}
+	],
+	"scene": 0,
+	"scenes": [
+		{
+			"name": "WickerChair_AlphaBlend",
+			"nodes": [
+				0,
+				3,
+				4,
+				5
+			]
+		}
+	],
+	"textures": [
+		{
+			"name": "WickerChair_Normal.png",
+			"sampler": 0,
+			"source": 0
+		},
+		{
+			"name": "WickerChair_ORM.jpg",
+			"sampler": 0,
+			"source": 1
+		},
+		{
+			"name": "WickerChair_BasecolorAlpha.png",
+			"sampler": 0,
+			"source": 2
+		}
+	]
+}

@@ -1,0 +1,292 @@
+{
+	"accessors": [
+		{
+			"bufferView": 4,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 26794,
+			"max": [
+				0.1058139055967331,
+				0.2995249330997467,
+				0.1537025272846222
+			],
+			"min": [
+				-0.10581384599208832,
+				2.984789534821175e-05,
+				-0.16576433181762695
+			],
+			"name": "position - Mixer02",
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 5,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 26794,
+			"name": "normal - Mixer02",
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 6,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 26794,
+			"name": "uv - Mixer02",
+			"type": "VEC2"
+		},
+		{
+			"bufferView": 7,
+			"byteOffset": 0,
+			"componentType": 5125,
+			"count": 140889,
+			"name": "indices - Mixer02",
+			"type": "SCALAR"
+		}
+	],
+	"asset": {
+		"copyright": "Copyright 2020 Shopify, Inc. CC BY 4.0 https://creativecommons.org/licenses/by/4.0/",
+		"extras": {
+			"created": "Tue May  4 10:10:36 2021"
+		},
+		"generator": "Gestaltor 2021.3.1 Wheat Professional - Evaluation day 6/30 (dev-e497d3c*)",
+		"version": "2.0"
+	},
+	"bufferViews": [
+		{
+			"buffer": 0,
+			"byteLength": 417126,
+			"byteOffset": 0
+		},
+		{
+			"buffer": 0,
+			"byteLength": 454138,
+			"byteOffset": 417126
+		},
+		{
+			"buffer": 0,
+			"byteLength": 32570,
+			"byteOffset": 871264
+		},
+		{
+			"buffer": 0,
+			"byteLength": 454138,
+			"byteOffset": 903834
+		},
+		{
+			"buffer": 0,
+			"byteLength": 321528,
+			"byteOffset": 1357972,
+			"byteStride": 12
+		},
+		{
+			"buffer": 0,
+			"byteLength": 321528,
+			"byteOffset": 1679500,
+			"byteStride": 12
+		},
+		{
+			"buffer": 0,
+			"byteLength": 214352,
+			"byteOffset": 2001028,
+			"byteStride": 8
+		},
+		{
+			"buffer": 0,
+			"byteLength": 563556,
+			"byteOffset": 2215380
+		}
+	],
+	"buffers": [
+		{
+			"byteLength": 2778936,
+			"uri": "Mixer.bin"
+		}
+	],
+	"cameras": [
+		{
+			"name": "camera0",
+			"perspective": {
+				"yfov": 0.8,
+				"zfar": 128.97994995117188,
+				"znear": 0.012897995300590992
+			},
+			"type": "perspective"
+		},
+		{
+			"name": "camera1",
+			"perspective": {
+				"yfov": 0.8,
+				"zfar": 139.50965881347656,
+				"znear": 0.013950965367257595
+			},
+			"type": "perspective"
+		},
+		{
+			"name": "camera2",
+			"perspective": {
+				"yfov": 0.8,
+				"zfar": 139.50965881347656,
+				"znear": 0.013950965367257595
+			},
+			"type": "perspective"
+		}
+	],
+	"images": [
+		{
+			"bufferView": 0,
+			"mimeType": "image/png",
+			"name": "Mixer02Shader (Base Color) image.png"
+		},
+		{
+			"bufferView": 1,
+			"mimeType": "image/jpeg",
+			"name": "Mixer02Shader (Metallic Roughness) image.jpg"
+		},
+		{
+			"bufferView": 2,
+			"mimeType": "image/jpeg",
+			"name": "Mixer02Shader (Normal) image.jpg"
+		},
+		{
+			"bufferView": 3,
+			"mimeType": "image/jpeg",
+			"name": "Mixer02Shader (Occlusion) image.jpg"
+		}
+	],
+	"materials": [
+		{
+			"name": "Mixer02Shader",
+			"normalTexture": {
+				"index": 2,
+				"texCoord": 0
+			},
+			"occlusionTexture": {
+				"index": 3,
+				"strength": 1.0,
+				"texCoord": 0
+			},
+			"pbrMetallicRoughness": {
+				"baseColorFactor": [
+					1.0,
+					1.0,
+					1.0,
+					1.0
+				],
+				"baseColorTexture": {
+					"index": 0,
+					"texCoord": 0
+				},
+				"metallicRoughnessTexture": {
+					"index": 1,
+					"texCoord": 0
+				}
+			}
+		}
+	],
+	"meshes": [
+		{
+			"primitives": [
+				{
+					"attributes": {
+						"NORMAL": 1,
+						"POSITION": 0,
+						"TEXCOORD_0": 2
+					},
+					"indices": 3,
+					"material": 0,
+					"mode": 4
+				}
+			]
+		}
+	],
+	"nodes": [
+		{
+			"mesh": 0,
+			"name": "Mixer02"
+		},
+		{
+			"camera": 0,
+			"name": "camera0",
+			"rotation": [
+				-0.08792929107444335,
+				-0.4660252426945497,
+				-0.043964645537221674,
+				0.8792929107444334
+			],
+			"translation": [
+				-0.36,
+				0.22,
+				0.26
+			]
+		},
+		{
+			"camera": 1,
+			"name": "camera1",
+			"rotation": [
+				0.005221289831994395,
+				0.34151406662051675,
+				-0.0018972438207269945,
+				0.9398602454081628
+			],
+			"translation": [
+				0.085,
+				0.205,
+				0.1495
+			]
+		},
+		{
+			"camera": 2,
+			"name": "camera2",
+			"rotation": [
+				0.11162911443718951,
+				0.8930329154975161,
+				0.27907278609297376,
+				-0.3348873433115685
+			],
+			"translation": [
+				-0.06,
+				0.072,
+				-0.203
+			]
+		}
+	],
+	"samplers": [
+		{
+			"magFilter": 9729,
+			"minFilter": 9987
+		}
+	],
+	"scene": 0,
+	"scenes": [
+		{
+			"nodes": [
+				0,
+				1,
+				2,
+				3
+			]
+		}
+	],
+	"textures": [
+		{
+			"name": "Mixer02Shader (Base Color)",
+			"sampler": 0,
+			"source": 0
+		},
+		{
+			"name": "Mixer02Shader (Metallic Roughness)",
+			"sampler": 0,
+			"source": 1
+		},
+		{
+			"name": "Mixer02Shader (Normal)",
+			"sampler": 0,
+			"source": 2
+		},
+		{
+			"name": "Mixer02Shader (Occlusion)",
+			"sampler": 0,
+			"source": 3
+		}
+	]
+}

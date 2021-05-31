@@ -1,0 +1,229 @@
+{
+	"accessors": [
+		{
+			"bufferView": 0,
+			"byteOffset": 0,
+			"componentType": 5123,
+			"count": 82080,
+			"type": "SCALAR"
+		},
+		{
+			"bufferView": 1,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 15944,
+			"max": [
+				0.0724999979138374,
+				0.0724999979138374,
+				0.00999999977648258
+			],
+			"min": [
+				-0.0724999979138374,
+				-0.0724999979138374,
+				-0.00999999977648258
+			],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 15944,
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 15944,
+			"type": "VEC2"
+		}
+	],
+	"asset": {
+		"extras": {
+			"created": "Tue Dec  1 17:02:37 2020"
+		},
+		"copyright": "CC BY 4.0 https://creativecommons.org/licenses/by/4.0/",
+		"generator": "Gestaltor 2020.4.2 Kuerbiskuchen Professional (dev-23f27e6*)",
+		"version": "2.0"
+	},
+	"bufferViews": [
+		{
+			"buffer": 0,
+			"byteLength": 164160,
+			"byteOffset": 0,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 191328,
+			"byteOffset": 164160,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 191328,
+			"byteOffset": 355488,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 127552,
+			"byteOffset": 546816,
+			"target": 34962
+		}
+	],
+	"buffers": [
+		{
+			"byteLength": 674368,
+			"uri": "AnalyticalSpheres.bin"
+		}
+	],
+	"cameras": [
+		{
+			"name": "Generated Camera",
+			"perspective": {
+				"yfov": 0.8,
+				"zfar": 37.232540130615234,
+				"znear": 0.0037232539616525173
+			},
+			"type": "perspective"
+		}
+	],
+	"images": [
+		{
+			"mimeType": "image/png",
+			"name": "AnalyticalSpheres_Normal.png",
+			"uri": "AnalyticalSpheres_Normal.png"
+		},
+		{
+			"mimeType": "image/jpeg",
+			"name": "AnalyticalSpheres_ORM.jpg",
+			"uri": "AnalyticalSpheres_ORM.jpg"
+		},
+		{
+			"mimeType": "image/png",
+			"name": "AnalyticalSpheres_BaseColor.png",
+			"uri": "AnalyticalSpheres_BaseColor.png"
+		}
+	],
+	"materials": [
+		{
+			"alphaMode": "OPAQUE",
+			"doubleSided": false,
+			"extras": {
+				"fromMI": {
+					"isTruePBR": true,
+					"shadingModel": "Metallic/Roughness"
+				}
+			},
+			"name": "CalibrationSpheres_TRB_MDL_MR",
+			"normalTexture": {
+				"index": 0,
+				"texCoord": 0
+			},
+			"pbrMetallicRoughness": {
+				"baseColorFactor": [
+					1.0,
+					1.0,
+					1.0,
+					1.0
+				],
+				"baseColorTexture": {
+					"index": 2,
+					"texCoord": 0
+				},
+				"metallicFactor": 1.0,
+				"metallicRoughnessTexture": {
+					"index": 1,
+					"texCoord": 0
+				},
+				"roughnessFactor": 1.0
+			}
+		}
+	],
+	"meshes": [
+		{
+			"name": "RootMesh",
+			"primitives": [
+				{
+					"attributes": {
+						"NORMAL": 2,
+						"POSITION": 1,
+						"TEXCOORD_0": 3
+					},
+					"indices": 0,
+					"material": 0,
+					"mode": 4
+				}
+			]
+		}
+	],
+	"nodes": [
+		{
+			"mesh": 0,
+			"name": "RootNode",
+			"rotation": [
+				0.0,
+				0.0,
+				0.0,
+				1.0
+			],
+			"scale": [
+				1.0,
+				1.0,
+				1.0
+			],
+			"translation": [
+				0.0,
+				0.0,
+				0.0
+			]
+		},
+		{
+			"camera": 0,
+			"name": "Generated Camera",
+			"rotation": [
+				0.0,
+				0.0,
+				0.0,
+				1.0
+			],
+			"translation": [
+				0.0,
+				0.0,
+				0.24870499968528748
+			]
+		}
+	],
+	"samplers": [
+		{}
+	],
+	"scene": 0,
+	"scenes": [
+		{
+			"name": "Root Scene",
+			"nodes": [
+				0,
+				1
+			]
+		}
+	],
+	"textures": [
+		{
+			"name": "AnalyticalSpheres_Normal",
+			"sampler": 0,
+			"source": 0
+		},
+		{
+			"name": "AnalyticalSpheres_ORM",
+			"sampler": 0,
+			"source": 1
+		},
+		{
+			"name": "AnalyticalSpheres_BaseColor",
+			"sampler": 0,
+			"source": 2
+		}
+	]
+}
