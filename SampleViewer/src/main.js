@@ -10,6 +10,8 @@ import { gltfModelPathProvider, fillEnvironmentWithPaths } from './model_path_pr
 async function main()
 {
     const canvas = document.getElementById("canvas");
+    canvas.width = 1024;
+    canvas.height = 1024;
     const context = canvas.getContext("webgl2", { alpha: false, antialias: false });
     const ui = document.getElementById("app");
     const view = new GltfView(context);
@@ -287,12 +289,6 @@ async function main()
     // configure the animation loop
     const update = () =>
     {
-        const devicePixelRatio = window.devicePixelRatio || 1;
-
-        // set the size of the drawingBuffer based on the size it's displayed.
-        canvas.width = Math.floor(canvas.clientWidth * devicePixelRatio);
-        canvas.height = Math.floor(canvas.clientHeight * devicePixelRatio);
-
         view.renderFrame(state, canvas.width, canvas.height);
         window.requestAnimationFrame(update);
     };
