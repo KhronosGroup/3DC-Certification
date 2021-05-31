@@ -73,7 +73,7 @@ const app = new Vue({
 
             ibl: true,
             punctualLights: true,
-            renderEnv: true,
+            renderEnv: false,
             blurEnv: true,
             clearColor: "",
             environmentRotations: [{title: "+Z"}, {title: "-X"}, {title: "-Z"}, {title: "+X"}],
