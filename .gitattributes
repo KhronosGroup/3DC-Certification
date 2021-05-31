@@ -5,9 +5,12 @@
 *.html text eol=lf
 *.css text eol=lf
 # Turn off text-based EOL adaptations for various image formats.
-*.jpg binary
-*.png binary
-*.hdr binary
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.hdr filter=lfs diff=lfs merge=lfs -text
 *.ktx2 binary
 *.svg binary
 *.pdf binary
+*.glb filter=lfs diff=lfs merge=lfs -text
+*.bin filter=lfs diff=lfs merge=lfs -text
+*.JPG filter=lfs diff=lfs merge=lfs -text
