@@ -51,7 +51,7 @@ const app = new Vue({
         return {
             fullheight: true,
             right: true,
-            models: ["DamagedHelmet"],
+            models: ["AnalyticalCubes"],
             flavours: ["glTF", "glTF-Binary", "glTF-Quantized", "glTF-Draco", "glTF-pbrSpecularGlossiness"],
             scenes: [{title: "0"}, {title: "1"}],
             cameras: [{title: "User Camera", index: -1}],
@@ -63,7 +63,7 @@ const app = new Vue({
             xmp: [{title: "xmp"}],
             statistics: [],
 
-            selectedModel: "DamagedHelmet",
+            selectedModel: "AnalyticalCubes",
             selectedFlavour: "",
             selectedScene: {},
             selectedCamera: {},
