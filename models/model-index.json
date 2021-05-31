@@ -1,0 +1,66 @@
+[
+  {
+    "name": "AnalyticalCubes",
+    "screenshot": "screenshot/screenshot.jpg",
+    "variants": {
+      "glTF": "AnalyticalCubes.gltf",
+      "glTF-Binary": "AnalyticalCubes.glb"
+    }
+  },
+  {
+    "name": "AnalyticalGrayscale",
+    "screenshot": "screenshot/screenshot.JPG",
+    "variants": {
+      "glTF": "AnalyticalGrayscale.gltf",
+      "glTF-Binary": "AnalyticalGrayscale.glb"
+    }
+  },
+  {
+    "name": "AnalyticalSpheres",
+    "screenshot": "screenshot/screenshot.jpg",
+    "variants": {
+      "glTF": "AnalyticalSpheres.gltf",
+      "glTF-Binary": "AnalyticalSpheres.glb"
+    }
+  },
+  {
+    "name": "GreenChair",
+    "screenshot": "screenshot/screenshot.jpg",
+    "variants": {
+      "glTF": "GreenChair.gltf",
+      "glTF-Binary": "GreenChair.glb"
+    }
+  },
+  {
+    "name": "Mixer",
+    "screenshot": "screenshot/screenshot.jpg",
+    "variants": {
+      "glTF": "Mixer.gltf",
+      "glTF-Binary": "Mixer.glb"
+    }
+  },
+  {
+    "name": "Shoe",
+    "screenshot": "screenshot/screenshot.jpg",
+    "variants": {
+      "glTF": "Shoe.gltf",
+      "glTF-Binary": "Shoe.glb"
+    }
+  },
+  {
+    "name": "TennisRacquet",
+    "screenshot": "screenshot/screenshot.jpg",
+    "variants": {
+      "glTF": "TennisRacquet.gltf",
+      "glTF-Binary": "TennisRacquet.glb"
+    }
+  },
+  {
+    "name": "WickerChair",
+    "screenshot": "screenshot/screenshot.jpg",
+    "variants": {
+      "glTF": "WickerChair.gltf",
+      "glTF-Binary": "WickerChair.glb"
+    }
+  }
+]
