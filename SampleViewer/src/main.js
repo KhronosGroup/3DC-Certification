@@ -47,7 +47,7 @@ async function main()
                 state.gltf = gltf;
                 const defaultScene = state.gltf.scene;
                 state.sceneIndex = defaultScene === undefined ? 0 : defaultScene;
-                state.cameraIndex = undefined;
+                state.cameraIndex = gltf.cameras.length > 0 ? 0 : undefined;
                 if (state.gltf.scenes.length != 0)
                 {
                     if(state.sceneIndex > state.gltf.scenes.length - 1)
