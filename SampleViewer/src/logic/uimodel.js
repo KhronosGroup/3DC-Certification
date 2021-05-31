@@ -46,7 +46,7 @@ class UIModel
             pluck('newValue'),
             map( environmentName => this.app.environments[environmentName].hdr_path)
         );
-        const initialEnvironment = "footprint_court";
+        const initialEnvironment = "Neutral";
         this.app.selectedEnvironment = initialEnvironment;
 
         this.app.tonemaps = Object.keys(GltfState.ToneMaps).map((key) => {

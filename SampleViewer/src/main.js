@@ -24,17 +24,11 @@ async function main()
     const pathProvider = new gltfModelPathProvider('assets/models/model-index.json');
     await pathProvider.initialize();
     const environmentPaths = fillEnvironmentWithPaths({
-        "footprint_court": "Footprint Court",
-        "pisa": "Pisa",
-        "doge2": "Doge's palace",
-        "ennis": "Dining room",
-        "field": "Field",
-        "helipad": "Helipad Goldenhour",
-        "papermill": "Papermill Ruins",
-        "neutral": "Studio Neutral",
-        "chromatic": "Studio Chromatic",
-        "directional": "Studio Directional",
-    }, "assets/environments/");
+        "Cannon_Exterior": "Cannon_Exterior",
+        "Colorful_Studio": "Colorful_Studio",
+        "Neutral": "Neutral",
+        "Wide_Street": "Wide_Street",
+    }, "assets/models/");
 
     const uiModel = new UIModel(app, pathProvider, environmentPaths);
 
