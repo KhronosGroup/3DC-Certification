@@ -10,12 +10,14 @@ import { gltfModelPathProvider, fillEnvironmentWithPaths } from './model_path_pr
 async function main()
 {
     const canvas = document.getElementById("canvas");
-    const context = canvas.getContext("webgl2", { alpha: false, antialias: true });
+    const context = canvas.getContext("webgl2", { alpha: false, antialias: false });
     const ui = document.getElementById("app");
     const view = new GltfView(context);
     const resourceLoader = view.createResourceLoader();
     const state = view.createState();
     state.renderingParameters.useDirectionalLightsWithDisabledIBL = true;
+    state.renderingParameters.clearColor = [255,255,255,255];
+    state.renderingParameters.renderEnvironmentMap = false;
 
     const pathProvider = new gltfModelPathProvider('assets/models/2.0/model-index.json');
     await pathProvider.initialize();

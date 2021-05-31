@@ -88,7 +88,7 @@ class UIModel
         this.captureCanvas = app.captureCanvas$.pipe(pluck('event'));
         this.cameraValuesExport = app.cameraExport$.pipe(pluck('event'));
 
-        const initialClearColor = "#303542";
+        const initialClearColor = "#FFFFFF";
         this.app.clearColor = initialClearColor;
         this.clearColor = app.colorChanged$.pipe(
             filter(value => value.event !== undefined),
