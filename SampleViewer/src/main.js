@@ -19,7 +19,7 @@ async function main()
     state.renderingParameters.clearColor = [255,255,255,255];
     state.renderingParameters.renderEnvironmentMap = false;
 
-    const pathProvider = new gltfModelPathProvider('assets/models/2.0/model-index.json');
+    const pathProvider = new gltfModelPathProvider('assets/models/model-index.json');
     await pathProvider.initialize();
     const environmentPaths = fillEnvironmentWithPaths({
         "footprint_court": "Footprint Court",

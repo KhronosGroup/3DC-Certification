@@ -35,8 +35,7 @@ export default {
     copy({
         targets: [
             { src: ["index.html"], dest: "dist/"},
-            { src: ["../assets/models/2.0", "!../asset/models/.git"], dest: "dist/assets/models"},
-            { src: ["../assets/environments/*.hdr", "../assets/environments/*.jpg", "!../asset/environments/.git"], dest: "dist/assets/environments"},
+            { src: ["../models"], dest: "dist/assets"},
             { src: ["ui"], dest: "dist/assets"},
             { src: ["images"], dest: "dist/assets"},
             { src: ["node_modules/@khronosgroup/gltf-viewer/dist/libs/*", "!../source/libs/hdrpng.js"], dest: "dist/libs"},
