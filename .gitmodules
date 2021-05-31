@@ -1,6 +1,0 @@
-[submodule "assets/environments"]
-	path = assets/environments
-	url = https://github.com/KhronosGroup/glTF-Sample-Environments.git
-[submodule "assets/models"]
-	path = assets/models
-	url = https://gitlab.khronos.org/3dcommerce/certification-public.git
