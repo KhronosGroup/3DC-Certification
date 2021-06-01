@@ -152,6 +152,22 @@ function getUrlParam(parameter, defaultvalue){
                                 </b-select>
                             </b-field>
 
+                            <b-field label="Active Environment" class="smallerLabel">
+                                <b-dropdown aria-role="list" v-model="selectedEnvironment">
+                                    <template #trigger="{ active }">
+                                        <b-button rounded
+                                            type="is-primary"
+                                            :icon-right="active ? 'menu-up' : 'menu-down'">
+                                            {{ environments[selectedEnvironment].title }}
+                                        </b-button>
+                                    </template>
+
+                                    <b-dropdown-item aria-role="listitem" v-for="name in Object.keys(environments)" v-bind:key="name" :value="name">
+                                        {{ environments[name].title }}
+                                    </b-dropdown-item>
+                                </b-dropdown>
+                            </b-field>
+
                             <b-field label="Capture Canvas" class="smallerLabel">
                                 <button v-stream:click="captureCanvas$" type="button" class="button is-rounded"><i class="fa fa-download downloadIcon"></i>Download as .png</button>
                             </b-field>
@@ -209,21 +225,7 @@ function getUrlParam(parameter, defaultvalue){
                                     Add New HDR
                                 </button>
 
-                                <b-field label="Active Environment" class="smallerLabel">
-                                    <b-dropdown aria-role="list" v-model="selectedEnvironment">
-                                        <template #trigger="{ active }">
-                                            <b-button rounded
-                                                type="is-primary"
-                                                :icon-right="active ? 'menu-up' : 'menu-down'">
-                                                {{ environments[selectedEnvironment].title }}
-                                            </b-button>
-                                        </template>
-
-                                        <b-dropdown-item aria-role="listitem" v-for="name in Object.keys(environments)" v-bind:key="name" :value="name">
-                                            {{ environments[name].title }}
-                                        </b-dropdown-item>
-                                    </b-dropdown>
-                                </b-field>
+                                
                             </b-field>
                         </div>
                     </b-tab-item>
