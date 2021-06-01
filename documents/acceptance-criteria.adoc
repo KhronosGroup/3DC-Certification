@@ -57,22 +57,22 @@ Evaluation Criteria: Analytical test object renders will be evaluated for color 
 === Analytical Spheres
 
 .Colored Spheres with Neutral IBL
-image:./images/Reference/rr-AnalyticalSpheres.png[pdfwidth=7in,align=left]
+image:../models/AnalyticalSpheres/rr-AnalyticalSpheres.png[pdfwidth=7in,align=left]
 
 _A collection of colored spheres with neutral IBL._
 
 .Colored Spheres with Cannon IBL
-image:./images/Reference/rr-AnalyticalSpheres-Cannon.png[pdfwidth=7in,align=left]
+image:../models/AnalyticalSpheres/rr-AnalyticalSpheres-Cannon.png[pdfwidth=7in,align=left]
 
 _A collection of colored spheres with cannon IBL._
 
 .Colored Spheres with Street IBL
-image:./images/Reference/rr-AnalyticalSpheres-Street.png[pdfwidth=7in,align=left]
+image:../models/AnalyticalSpheres/rr-AnalyticalSpheres-Street.png[pdfwidth=7in,align=left]
 
 _A collection of colored spheres with street scene IBL._
 
 .Colored Spheres with Studio IBL
-image:./images/Reference/rr-AnalyticalSpheres-Studio.png[pdfwidth=7in,align=left]
+image:../models/AnalyticalSpheres/rr-AnalyticalSpheres-Studio.png[pdfwidth=7in,align=left]
 _A collection of colored spheres with studio lighting IBL._
 
 
@@ -80,7 +80,7 @@ _A collection of colored spheres with studio lighting IBL._
 === Analytical Cubes
 
 .Colored Cubes with Neutral IBL
-image:./images/Reference/rr-AnalyticalCubes.png[pdfwidth=7in,align=left]
+image:../models/AnalyticalCubes/rr-AnalyticalCubes.png[pdfwidth=7in,align=left]
 
 _A collection of colored cubes with neutral IBL. Cubes show a flat color over the surface compared to the spheres. The base color of each cube is the same as the corresponding sphere._
 
@@ -88,7 +88,7 @@ _A collection of colored cubes with neutral IBL. Cubes show a flat color over th
 === Analytical Grayscale
 
 .Grayscale Bars with Neutral IBL
-image:./images/Reference/rr-AnalyticalGrayscale.png[pdfwidth=7in,align=left]
+image:../models/AnalyticalGrayscale/rr-AnalyticalGrayscale.png[pdfwidth=7in,align=left]
 
 _A collection of grayscale bars with neutral IBL._
 
@@ -96,7 +96,7 @@ _A collection of grayscale bars with neutral IBL._
 == Mixer
 
 .Mixer Full View
-image:./images/Reference/rr-Mixer-0.png[pdfwidth=7in,align-left]
+image:../models/Mixer/rr-Mixer-0.png[pdfwidth=7in,align-left]
 
 _Mixer model in full view. This is the view from camera0._
 
@@ -112,12 +112,12 @@ _Mixer model in full view. This is the view from camera0._
 * Reflections: Another way to see if the metalness is correct, is to see how much of the environment can be reflected. The front knob and mixer blade, are more reflective than the bowl and the band going around the mixer.
 
 .Mixer Head
-image:./images/Reference/rr-Mixer-1.png[pdfwidth=7in,align-left]
+image:../models/Mixer/rr-Mixer-1.png[pdfwidth=7in,align-left]
 
 _Mixer model showing different metalic types. This is the view from camera1._
 
 .Mixer Base
-image:./images/Reference/rr-Mixer-2.png[pdfwidth=7in,align-left]
+image:../models/Mixer/rr-Mixer-2.png[pdfwidth=7in,align-left]
 
 _Mixer model showing painted metal base. This is the view from camera2._
 
@@ -125,11 +125,11 @@ _Mixer model showing painted metal base. This is the view from camera2._
 == Shoe
 
 .Shoe Full View
-image:./images/Reference/rr-Shoe-0.png[pdfwidth=7in,align-left]
+image:../models/Shoe/rr-Shoe-0.png[pdfwidth=7in,align-left]
 
 _Shoe model in full view. This is the view from camera0._
 
-[[shoe-criteria]
+[[shoe-criteria]]
 === Shoe - Criteria
 * The shoe should be using a PBR Metallic Roughness material to ensure the materials on the shoe appear correct
 * The top of the shoe is using a mesh like material with a normal map that creates the appearance of indentations
@@ -142,7 +142,7 @@ _Shoe model in full view. This is the view from camera0._
 * Small indents for the mesh as well as pebbling on the foam sole help to create nuance in materials that are all soft
 
 .Shoe Sidewall Detail
-image:./images/Reference/rr-Shoe-1.png[pdfwidth=7in,align-left]
+image:../models/Shoe/rr-Shoe-1.png[pdfwidth=7in,align-left]
 
 _Shoe model showing the sole and side in detail. This is the view from camera1._
 
@@ -151,7 +151,7 @@ _Shoe model showing the sole and side in detail. This is the view from camera1._
 * The subtle changes in the different materials used help to make it obvious what the different panels of the shoe are made of. The Roughness and Metal changes also help to make the different versions of black more obvious as well.
 
 .Shoe Laces and Tounge
-image:./images/Reference/rr-Shoe-2.png[pdfwidth=7in,align-left]
+image:../models/Shoe/rr-Shoe-2.png[pdfwidth=7in,align-left]
 
 _Shoe model showing detail of laces and tounge. This is the view from camera2._
 
@@ -159,7 +159,7 @@ _Shoe model showing detail of laces and tounge. This is the view from camera2._
 == Wicker Chair
 
 .Wicker Chair Full View
-image:./images/Reference/rr-WickerChair-0.png[pdfwidth=7in,align-left]
+image:../models/WickerChair/rr-WickerChair-0.png[pdfwidth=7in,align-left]
 
 _Full view of the wicker chair from camera0. The back is modeled and textured using alpha transparency._
 
@@ -174,44 +174,29 @@ _Full view of the wicker chair from camera0. The back is modeled and textured us
 The curvy wicker texture should use alpha-as-coverage in Alpha Blend mode, and should show correct depth sorting.
 
 .Chair Wicker Close-Up
-image:./images/Reference/rr-WickerChair-1.png[pdfwidth=7in,align-left]
+image:../models/WickerChair/rr-WickerChair-1.png[pdfwidth=7in,align-left]
 
-_TBD (camera1)_
+_Camera 1 shows correct depth sorting. The larger curvy texture on the outside surface should render in front of the smaller texture on the inside surface._
 
-The correct transparency mode is BLEND which shows soft edges (above). The incorrect transparency mode is MASK which has abrupt hard edges (below).
-
-The incorrect transparency mode Alpha Test, which has abrupt hard edges.
-
-![](WARN_REPLACE_IMG_URL)
-A closeup showing incorrect depth sorting (left) versus correct depth sorting (right). The larger curvy texture on the outside surface should render in front of the smaller texture on the inside surface.
+The correct transparency mode is BLEND which shows soft edges (above). The incorrect transparency mode is MASK which has abrupt hard edges.
 
 [[wicker-chair-normal-map]]
 === WickerChair - Normal Map
-![](WARN_REPLACE_IMG_URL)
 
 [glTF Sample Viewer](https://github.khronos.org/glTF-Sample-Viewer-Release/), 1024x1024, neutral IBL, exposure +1, camera2.
 
 .Wicker Chair Cushion Close-Up
-image:./images/Reference/rr-WickerChair-2.png[pdfwidth=7in,align-left]
-_TBD (camera2)_
+image:../models/WickerChair/rr-WickerChair-2.png[pdfwidth=7in,align-left]
+_Ccamera 2 shows the coorect tangent basis for the normal map on the red cushion. The wrinkles are rendered as indentations, and the wrinkles are shaded consistently across UV borders._
 
-Normal map on the red cushion shows correct tangent basis for the normal map. The wrinkles are rendered as indentations, and the wrinkles are shaded consistently across UV borders.
-
-![](WARN_REPLACE_IMG_URL)
-
-Normal map showing an incorrect tangent basis. The green channel of the normal map is being shaded incorrectly, causing abrupt shading changes where the wrinkles cross the UV seam.
-
-![](WARN_REPLACE_IMG_URL)
-
-Normal map showing a different incorrect tangent basis. The red channel of the normal map is shading incorrectly, causing abrupt shading changes across the UV seam (lower circles) and the wrinkles to look like hills rather than valleys (upper circle).
 
 [[tennis-racquet]]
 == Tennis Racquet
 
-https://gitlab.khronos.org/3dcommerce/certification-models/-/tree/master/TennisRacquet[Model]
+link:../models/TennisRacquet[Model]
 
 .Tennis Racquet Full View
-image:./images/Reference/rr-TennisRacquet-0.png[pdfwidth=7in,align-left]
+image:../models/TennisRacquet/rr-TennisRacquet-0.png[pdfwidth=7in,align-left]
 
 _Full view of the tennis raquet from camera0._
 
@@ -225,22 +210,21 @@ _Full view of the tennis raquet from camera0._
  * The handle should appear black with a visible leather texture
 
 .Tennis Racquet Strings Close-Up
-image:./images/Reference/rr-TennisRacquet-1.png[pdfwidth=7in,align-left]
+image:../models/TennisRacquet/rr-TennisRacquet-1.png[pdfwidth=7in,align-left]
 
 _Close up of the strings using alpha blending as shown by camera1._
 
 Alpha blend on strings: Blue paint is opaque, white strings are translucent
 
 .Tennis Racquet Grip Close-Up
-image:./images/Reference/rr-TennisRacquet-2.png[pdfwidth=7in,align-left]
+image:../models/TennisRacquet/rr-TennisRacquet-2.png[pdfwidth=7in,align-left]
 
 _Close up of the grip and frame from camera2. The frame appearance is created with normal, occlusion, and PBR metallic roughness material for the carbon fiber frame. The leather grip texture is achieved with normal, occlusion, and PBR metallic roughness._
 
-using alpha blending as shown by camera2._
+Using alpha blending as shown by camera2._
 
 [[green-chair]]
 == Green Chair
-*Asset re-uploaded with more cameras, awaiting merge in gitlab.*
 
 [[green-chair-criteria]]
 === Green Chair - Criteria
@@ -249,14 +233,14 @@ using alpha blending as shown by camera2._
 * This model has subtle details such as the green and brown fabric using normal maps, these should be seen when previewing the model up-close using the embedded scene cameras.
 
 .Green Chair Full View
-image:./images/Reference/rr-GreenChair-0.png[pdfwidth=7in,align-left]
+image:../models/GreenChair/rr-GreenChair-0.png[pdfwidth=7in,align-left]
 
 _Green chair model in full view. This is the view from camera0._
 
 Using the first camera to get a close-up shot of the model, there should be visible tiling and fine details in the fabric and wood. These details would otherwise be lost without the KHR_Texture_Transform extension enabled.
 
 .Green Chair Texture Transform
-image:./images/Reference/rr-GreenChair-1.png[pdfwidth=7in,align-left]
+image:../models/GreenChair/rr-GreenChair-1.png[pdfwidth=7in,align-left]
 
 _Green chair model showing detail of correct texture transform in the green material and wood grain in chair arm. This is the view from camera1._
 
@@ -265,7 +249,7 @@ Above picture illustrates one of the close-up cameras with the extension enabled
 Using the second camera to get a close-up shot of the model, there should be visible tiling and fine details in the fabric and wood. These details would otherwise be lost without the KHR_Texture_Transform extension enabled. The brown fabric should also carry a subtle tiled normal-map texture, enhancing the material appearance of the chair.
 
 .Green Chair Texture Transform
-image:./images/Reference/rr-GreenChair-2.png[pdfwidth=7in,align-left]
+image:../models/GreenChair/rr-GreenChair-2.png[pdfwidth=7in,align-left]
 
 _Green chair model showing another detail of correct texture transform in the green material and wood grain in chair arm. This is the view from camera2._
 

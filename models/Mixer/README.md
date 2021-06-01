@@ -2,10 +2,15 @@
 
 ## Screenshot
 
-![screenshot](screenshot/screenshot.jpg)
+![screenshot](rr-mixer-0.png)
 
 ## Description
 
+## Contributors
+See the [Project Contributor list](../../documents/contributors.adoc)
+
 ## License Information
-Copyright 2020 Shopify, Inc. 
-CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+
+CC BY 4.0 International
+
+See the full details of the [Copyrights and License](../../documents/copyright-license.adoc)

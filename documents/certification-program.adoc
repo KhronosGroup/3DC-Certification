@@ -42,7 +42,7 @@ The Khronos 3D Commerce Working Group makes the 3D Commerce Certification Progra
 The 3D Commerce Certification Program **(“Program”) **tests applications that load, manipulate, and render 3D assets (“**Viewers”)**. A Viewer may include user interface (UI) features in addition to a rendering engine, but UI elements are not considered as part of the certification process.
 Throughout this Agreement, the following terms when capitalized have the following meanings:
 
-*"Certificant"* is a company, regardless of whether that party is a Khronos Member, that has executed the https://docs.google.com/document/d/1cak3ZwXAxJQzph6BywWWHKGTx8_-9S9hfK2oHI-Uu2Q/edit#heading=h.tfdpnxkysq18[Khronos Certification Agreement _(location tdb)_] for the Program and has currently paid the Certification Program Fee.
+*"Certificant"* is a company, regardless of whether that party is a Khronos Member, that has executed the https://members.khronos.org/document/dl/25577[Khronos Certification Agreement] for the Program and has currently paid the Certification Program Fee.
 
 *"Certification List"* is a mailing list that can be subscribed to by Working Group members, current Certificants, and past Certificants that still have Viewers on the Certification Registry. It is used for all notices and discussions related to the Program. It is the responsibility of the Certificant to maintain a valid contact address on the Certification List.
 
@@ -166,7 +166,7 @@ Three months after the release of a new Test Package minor version, all new Subm
 [[certification-mark]]
 = Certification Trademark
 
-The marks that may be used in association with a Certified Viewer under the terms of the Khronos Certification Agreement and the Khronos trademark guidelines available at [https://www.khronos.org/legal/trademarks/](https://www.khronos.org/legal/trademarks/) are:
+The marks that may be used in association with a Certified Viewer under the terms of the Khronos Certification Agreement and the Khronos trademark guidelines available at https://www.khronos.org/legal/trademarks/[Khronos Logos, Trademarks, and Guidelines] are:
 
 * ‘Khronos® 3D Commerce™ Certified’
 

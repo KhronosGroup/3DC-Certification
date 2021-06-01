@@ -48,12 +48,12 @@ All questions about this document or the procedures described here should be add
 
 Documents that provide additional information
 
-1. link:certification-program.html[3D Commerce™ Viewer Certification Program]
-2. CERTIFICATION AGREEMENT (_link tbd_)
-3. link:reference-render-creation-v1.0.html[3D Commerce™ Certification Reference Render Creation]
-4. link:acceptance-criteria-v1.0.html[3D Commerce™ Certification Acceptance Criteria]
+1. link:certification-program.adoc[3D Commerce™ Viewer Certification Program]
+2. https://members.khronos.org/document/dl/25577[CERTIFICATION AGREEMENT]
+3. link:reference-render-creation.adoc[3D Commerce™ Certification Reference Render Creation]
+4. link:acceptance-criteria.adoc[3D Commerce™ Certification Acceptance Criteria]
 
-It is best to read through the entire document before starting to collect the information needed for your Certificant submission. There are naming conventions which must be followed.
+It is best to read through this entire document before starting to collect the information needed for your Certificant submission. There are naming conventions which must be followed.
 
 [[contributors]]
 = Contributors
@@ -65,7 +65,7 @@ This section described what is needed to start the Certificant process. Successf
 
 1. Signed legal agreement
 2. Payment of fees
-3. Download link:certification-test-suite-v1.0.zip[Test Suite] (_ZIP file_)
+3. Download the Test Suite either by cloning this repository or just downloading the link:..link:../models[models folder] as a _ZIP_ file.
 
 At this point you run the Test Suite as described below using your viewer.
 To continue all of the above steps must be successfully completed.
@@ -116,7 +116,7 @@ The 3DCommerce certified viewers are expected to render Physically Based materia
 In order to generate Test Results that match the Reference Renders a viewer must expose a certain number of scene configuration parameters that are listed in a non-exhaustive manner below.
 
 * Background color, must be set to 0xFFFFFF
-* IBL direction and intensity, see Importing Lighting from the link:https://docs.google.com/document/d/1kyBlAfk8944Hm9yyAHCL9PVM-ZsTxOz5-uwzk8m9axE/edit#heading=h.s4wg8ntxghb0[Cert Render Creation Document]
+* IBL direction and intensity, see Importing Lighting from the link:reference-render-creation.adoc[Certification Render Creation Document]
 * Camera position, orientation and field of view set from a glTF file.
 
 All models come as glTF packages.(.gltf JSON file plus necessary images).. Some models may also include .glb. The content is the same for both formats. The glTF specification defines the structure of these formats. The models only use features found in glTF V2.0 Core specification plus https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_texture_transform[KHR_texture_transform extension]. The eight-model test suite tests many aspects of rendering available in the Core specification.
@@ -127,78 +127,60 @@ The naming of models and screen shots are important for proper operation of the 
 [width="100%",cols="^10%,<40%,<10%,<40%",frame="topbot",options="header"]
 |==========================
 | **#** | **Description** | **Folder** | **Model**
-| >| **Camera Name or (IBL)** 2+>| **Reference Image**
-.2+| 1 | Colored cubes |  AnalyticalCubes/ | glTF/AnalyticalCubes.gltf 
-  >| _Generated Camera_ 2+>| screenshot/rr-AnalyticalCubes.png
-.2+| 2 | Grayscale test swatches |  AnalyticalGrayscale/ | glTF/AnalyticalGrayscale.gltf
-  >| _Generated Camera_ 2+>| screenshot/rr-AnalyticalGrayscale.png
-.5+| 3 | Colored spheres | AnalyticalSpheres / | glTF/AnalyticalSpheres.gltf 
-  >| _Generated Camera_ 2+>| screenshot/rr-AnalyticalSpheres.png
-  >| _(Cannon)_ 2+>| screenshot/rr-AnalyticalSpheres-Cannon.png
-  >| _(Street)_ 2+>| screenshot/rr-AnalyticalSpheres-Street.png
-  >| _(Studio)_ 2+>| screenshot/rr-AnalyticalSpheres-Studio.png
-.4+| 4 | Green canvas chair | **GreenChair/** | glTF/GreenChair.gltf
-  >| _camera0_ 2+>| screenshot/rr-GreenChair-0.png
-  >| _camera1_ 2+>| screenshot/rr-GreenChair-1.png
-  >| _camera2_ 2+>| screenshot/rr-GreenChair-2.png
-.4+| 5 | Kitchen stand mixer | **Mixer/** | glTF/Mixer.gltf
-  >| _camera0_ 2+>| screenshot/rr-Mixer-0.png
-  >| _camera1_ 2+>| screenshot/rr-Mixer-1.png
-  >| _camera2_ 2+>| screenshot/rr-Mixer-2.png
-.4+| 6 | Walking shoe | **Shoe/** | glTF/Shoe.gltf
-  >| _camera0_ 2+>| screenshot/rr-Shoe-0.png
-  >| _camera1_ 2+>| screenshot/rr-Shoe-1.png
-  >| _camera2_ 2+>| screenshot/rr-Shoe-2.png
-.4+| 7 | Tennis racket with logo | **TennisRacquet/** | glTF/TennisRacquet.gltf
-  >| _camera0_ 2+>| screenshot/rr-TennisRacquet-0.png
-  >| _camera1_ 2+>| screenshot/rr-TennisRacquet-1.png
-  >| _camera2_ 2+>| screenshot/rr-TennisRacquet-2.png
-.4+| 8 | Wicker hanging chair with cushion | **WickerChair/** | glTF/WickerChair.gltf
-  >| _camera0_ 2+>| screenshot/rr-WickerChair-0.png
-  >| _camera1_ 2+>| screenshot/rr-WickerChair-1.png
-  >| _camera2_ 2+>| screenshot/rr-WickerChair-2.png
+.2+| 1 .2+| Colored cubes .2+|  AnalyticalCubes/ | glTF/AnalyticalCubes.gltf 
+ <| glTF-Binary/AnalyticalCubes.glb
+.2+| 2 .2+| Grayscale test swatches .2+|  AnalyticalGrayscale/ | glTF/AnalyticalGrayscale.gltf
+ <| glTF-Binary/AnalyticalGrayscale.glb
+.2+| 3 .2+| Colored spheres .2+| AnalyticalSpheres / | glTF/AnalyticalSpheres.gltf 
+ <| glTF-Binary/AnalyticalSpheres.glb
+.2+| 4 .2+| Green canvas chair .2+| GreenChair/ | glTF/GreenChair.gltf
+ <| glTF-Binary/GreenChair.glb
+.2+| 5 .2+| Kitchen stand mixer .2+| Mixer/ | glTF/Mixer.gltf
+ <| glTF-Binary/Mixer.glb
+.2+| 6 .2+| Walking shoe .2+| Shoe/ | glTF/Shoe.gltf
+ <| glTF-Binary/Shoe.glb
+.2+| 7 .2+| Tennis racket with logo .2+| TennisRacquet/** | glTF/TennisRacquet.gltf
+ <| glTF-Binary/TennisRacquet.glb
+.2+| 8 .2+| Wicker hanging chair with cushion .2+| WickerChair/ | glTF/WickerChair.gltf
+ <| glTF-Binary/WickerChair.glb
 |==========================
 
-_The name and structure of each test model comprising the test suite. The test suite contains the 8 listed directories with one model per directory (3rd column). All models contain a glTF formatted version. Those in **bold** also contain GLB formatted ones. The directory for GLB files is 'glTF-Binary' instead of 'glTF'. The model filename is shown in the 4th column. Each camera has a reference rendered image file. If there is more than one camera, then the camera name is listed with the model. The AnalyticalSphere model has four IBLs. The name of each IBL is listed in parenthese in the camera column. The image file path is shown in the same row as the camera name. Each folder may contain additional directories to support the model._
+_The name and structure of each test model comprising the test suite. The test suite contains the 8 listed directories with one model per directory (3rd column). All models contain both glTF and GLB formatted versions. The model filename is shown in the 4th column. Each folder may contain additional directories to support the model._
+
+.Test Suite Images
+[width="100%",cols="^8%,<20%,<20%,<12%,<20%,<20%",frame="topbot",options="header"]
+|==========================
+| **#** | **Name** | **Camera Name** | **IBL (.hdr)** | **Reference Image (.png)** | **Rendered Image (.png)**
+| 1 | AnalyticalCubes | _Generated Camera_ | Neutral | rr-AnalyticalCubes | c-AnalyticalCubes
+| 2 | AnalyticalGrayscale |  _Generated Camera_ | Neutral | rr-AnalyticalGrayscale | c-AnalyticalGrayscale
+.4+| 3 | AnalyticalSpheres |  _Generated Camera_ | Neutral | rr-AnalyticalSpheres | c-AnalyticalSpheres
+ <| AnalyticalSpheres |  _Generated Camera_ | Cannon | rr-AnalyticalSpheres-Cannon | c-AnalyticalSpheres-Cannon
+ <| AnalyticalSpheres |  _Generated Camera_ | Street | rr-AnalyticalSpheres-Street | c-AnalyticalSpheres-Street
+ <| AnalyticalSpheres |  _Generated Camera_ | Studio | rr-AnalyticalSpheres-Studio | c-AnalyticalSpheres-Studio
+.3+| 4 | GreenChair | camera0 | Neutral | rr-GreenChair-0 | c-GreenChair-0
+ <| GreenChair | camera1 | Neutral | rr-GreenChair-1 | c-GreenChair-1
+ <| GreenChair | camera2 | Neutral | rr-GreenChair-2 | c-GreenChair-2
+.3+| 5 | Mixer | camera0 | Neutral | rr-Mixer-0 | c-Mixer-0
+ <| Mixer | camera1 | Neutral | rr-Mixer-1 | c-Mixer-1
+ <| Mixer | camera2 | Neutral | rr-Mixer-2 | c-Mixer-2
+.3+| 6 | Shoe | camera0 | Neutral | rr-Shoe-0 | c-Shoe-0
+ <| Shoe | camera1 | Neutral | rr-Shoe-1 | c-Shoe-1
+ <| Shoe | camera2 | Neutral | rr-Shoe-2 | c-Shoe-2
+.3+| 7 | TennisRacquet | camera0 | Neutral | rr-TennisRacquet-0 | c-TennisRacquet-0
+ <| TennisRacquet | camera1 | Neutral | rr-TennisRacquet-1 | c-TennisRacquet-1
+ <| TennisRacquet | camera2 | Neutral | rr-TennisRacquet-2 | c-TennisRacquet-2
+.3+| 8 | WickerChair | camera0 | Neutral | rr-WickerChair-0 | c-WickerChair-0
+ <| WickerChair | camera1 | Neutral.r | rr-WickerChair-1 | c-WickerChair-1
+ <| WickerChair | camera2 | Neutral | rr-WickerChair-2 | c-WickerChair-2
+|==========================
+
+_The name of the cameras, IBL, reference render image file, and required portion of the certificants rendered image file. Each camera has a reference rendered image file and is listed in column 3. The name of each IBL is listed in the 4th column. All IBL used the file extesion **.hdr**. The AnalyticalSphere model has four IBLs. The reference image filename is shown in column 5. The required portion of the Certificants rendered image file shown in column 6. All rendered image files use the file extension **.png**._
 
 The uploaded results file is either a ZIP or Tarball (.tgz or .tar.gz) file containing one folder named according to the Certificant’s organization and containing at least 18 captured images named according to Table 2. Each filename can be customized with any text using the character set [a-zA-Z0-9-_.] (all lower and upper case Roman letters, all Arabic digits, dash, underscore, and dot). If any customized additions are made, those characters must be separated from the required name by an underscore character. All image filenames must end in “.png”.
 
 The folder may contain zero or more text files (.txt) with human-readable text in English that describes or discusses general or specific conditions, exemption, or exceptional circumstance. If the contents relates exclusively to a single render, then the text file should be preceded by the model number (e.g., 03_); otherwise, the filename is up to the Certificant. All text filenames must end in “.txt”
 
-.Required captured file naming convention
-[width="75%",cols="^10%,<25%,^10%,<55%",frame="topbot",options="header"]
-|==========================
-| **#** | **Model** |** Camera #** |  **Rendered Image Required Name**
-| 1 | AnalyticalCubes | 0 |  c-AnalyticalCubes.png
-| 2 | AnalyticalGrayscale | 0 | c-AnalyticalGrayscale.png
-.5+| 3 .5+| AnalyticalSpheres 2+| 
-  | (default) | c-AnalyticalSpheres.png
-  | (Cannon) | c-AnalyticalSpheres-Cannon.png
-  | (Street) | c-AnalyticalSpheres-Street.png
-  | (Studio) | c-AnalyticalSpheres-Studio.png
-.4+| 4 .4+| GreenChair 2+| 
-  | 0 | c-GreenChair-0.png
-  | 1 | c-GreenChair-1.png
-  | 2 | c-GreenChair-2.png
-.4+| 5 .4+| Mixer 2+| 
-  | 0 | c-Mixer-0.png
-  | 1 | c-Mixer-1.png
-  | 2 | c-Mixer-2.png
-.4+| 6 .4+| Shoe 2+| 
-  | 0 | c-Shoe-0.png
-  | 1 | c-Shoe-1.png
-  | 2 | c-Shoe-2.png
-.4+| 7 .4+| TennisRacquet 2+| 
-  | 0 | c-TennisRacquet-0.png
-  | 1 | c-TennisRacquet-1.png
-  | 2 | c-TennisRacquet-2.png
-.4+| 8 .4+| WickerChair 2+| 
-  | 0 | c-WickerChair-0.png
-  | 1 | c-WickerChair-1.png
-  | 2 | c-WickerChair-2.png
-|==========================
-_If the camera column contains text in parenthese, then that is the name of the IBL. This only applies to the AnalyticalSpheres model. Any Certificant added naming is preceded by an underscore (_ _ _) and inserted prior to the extension. All extensions are .png. For example if the Certificant wished to add the custom name **acme-inc_V1.0**, the result would be **c-AnalyticalCubes_acme-inc_V1.0.png**._
-
+If the camera column contains text in parenthese, then that is the name of the IBL. This only applies to the AnalyticalSpheres model. Any Certificant added naming is preceded by an underscore (_ _ _) and inserted prior to the extension. All extensions are .png. For example if the Certificant wished to add the custom name **acme-inc_V1.0**, the result would be **c-AnalyticalCubes_acme-inc_V1.0.png**.
 
 The specifics of generating the rendering of the test models is viewer dependent and this document is unable to describe how to proceed in that level of detail. In each case the following steps must be accomplished:
 
