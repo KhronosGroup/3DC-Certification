@@ -103,7 +103,7 @@ In order to comply with the certified standard Certifiers must ensure their view
 [[importing-lighting]]
 === Importing Lighting
 
-Download the link:ibl.hdr[neutral IBL] and load it into your viewer. You will then position the IBL so that the narrow gap created by the two silks in the image is facing your viewer’s forward axis. Note that different viewers label axis differently and you may need to adjust accordingly. Below is an example of different labeling methods for 3D axis. Your axis can be labeled using any method so long as your IBL is set to have the same relative rotation to the test objects as shown in the test renders.
+Download the link:../models/Neutral.hdr[neutral IBL] and load it into your viewer. You will then position the IBL so that the narrow gap created by the two silks in the image is facing your viewer’s forward axis. Note that different viewers label axis differently and you may need to adjust accordingly. Below is an example of different labeling methods for 3D axis. Your axis can be labeled using any method so long as your IBL is set to have the same relative rotation to the test objects as shown in the test renders.
 
 .Coordinate Systems Use by Different Tools
 image:./images/3DCommerce-reference-tool-coordinates.png[pdfwidth=7in,align=left]
