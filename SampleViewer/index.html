@@ -152,6 +152,10 @@ function getUrlParam(parameter, defaultvalue){
                                 </b-select>
                             </b-field>
 
+                            <b-field label="Capture Canvas" class="smallerLabel">
+                                <button v-stream:click="captureCanvas$" type="button" class="button is-rounded"><i class="fa fa-download downloadIcon"></i>Download as .png</button>
+                            </b-field>
+
                             <b-field label="Variants" class="subtitle" v-bind:style="[materialVariants.length <= 1 ? {'display': 'none'} : {}]">
                                 <b-field v-for="item in materialVariants" v-bind:key="item.titel" v-bind:style="[materialVariants.length > 5 ? {'display': 'none'} : {}]">
                                     <b-radio v-bind:native-value="item.title" v-stream:input="variantChanged$" v-model="selectedVariant">
@@ -281,9 +285,6 @@ function getUrlParam(parameter, defaultvalue){
 
                         <div class="tabContent">
                             <h2 class="title is-spaced">Advanced Controls</h2>
-                            <b-field label="Capture Canvas" class="smallerLabel">
-                                <button v-stream:click="captureCanvas$" type="button" class="button is-rounded"><i class="fa fa-download downloadIcon"></i>Download as .png</button>
-                            </b-field>
                             <b-field label="Debug Channels" class="smallerLabel">
                                 <b-select v-stream:input="debugchannelChanged$" v-model="debugChannel">
                                     <option v-for="(item) in debugchannels"
