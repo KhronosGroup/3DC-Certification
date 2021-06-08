@@ -19,7 +19,7 @@ The glTF models can be viewed with the 3D Commerce Configured Sample Viewer (nee
 
 This first release of the Certification Program is only concerned about single products in a well-lit neutral background studio stage, as would be found in a typical single product studio photo-shoot. There is a large range of lighting and product environments that are not currently covered in the Certification process. It is anticipated that future versions of the Certification Test Suite will address those considerations. 
 
-If ths program is relevant to your business, we warmly invite you to consider joining [Khronos Group](https://khronos.org) to influence and contrbute to the Program's evolution.
+If this program is relevant to your business, we warmly invite you to consider joining [Khronos Group](https://khronos.org) to influence and contrbute to the Program's evolution.
 
 ### Becoming Certified
 
