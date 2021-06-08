@@ -21,6 +21,6 @@ This first release of the Certification Program is only concerned about single p
 
 If this program is relevant to your business, we warmly invite you to consider joining [Khronos Group](https://khronos.org) to influence and contrbute to the Program's evolution.
 
-### Becoming Certified
+### Certified Viewer Registry
 
-The [3D Commerce Certification Overview](https://www.khronos.org/3dcommerce/certificants/) describes the process to have your 3D viewer certified. The list of [certified viewers](https://www.khronos.org/3dcommerce/certification/conformant-products/) is public.
+The list of [certified viewers](https://www.khronos.org/3dcommerce/certification/conformant-products/) is publicly posted.
