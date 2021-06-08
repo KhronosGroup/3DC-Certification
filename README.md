@@ -13,7 +13,7 @@ There are two major components to this Khronos 3D Commerce<sup>TM</sup> Certific
 * [Documents](./documents) - the primary reference for Certification Program details, including how to generate a test submission
 * [Models](./models) - the set of glTF models used for Certification.
 
-The glTF models can be viewed with the 3D Commerce Configured Sample Viewer (need URL).
+The glTF models can be viewed with the [3D Commerce Configured Sample Viewer](https://github.khronos.org/3DC-Sample-Viewer).
 
 ## Scope
 
