@@ -2,7 +2,7 @@
 
 ## Screenshot
 
-![screenshot](rr-mixer-0.png)
+![screenshot](rr-Mixer-0.png)
 
 ## Description
 
