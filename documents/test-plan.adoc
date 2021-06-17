@@ -118,8 +118,10 @@ In order to generate Test Results that match the Reference Renders a viewer must
 * Background color, must be set to 0xFFFFFF
 * IBL direction and intensity, see Importing Lighting from the link:reference-render-creation.adoc[Certification Render Creation Document]
 * Camera position, orientation and field of view set from a glTF file.
+* Disable anti-aliasing.
+* Gamma correction on the rendered image.
 
-All models come as glTF packages.(.gltf JSON file plus necessary images).. Some models may also include .glb. The content is the same for both formats. The glTF specification defines the structure of these formats. The models only use features found in glTF V2.0 Core specification plus https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_texture_transform[KHR_texture_transform extension]. The eight-model test suite tests many aspects of rendering available in the Core specification.
+All models come as glTF packages.(.gltf JSON file plus necessary images). Some models may also include .glb. The content is the same for both formats. The glTF specification defines the structure of these formats. The models only use features found in glTF V2.0 Core specification plus https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_texture_transform[KHR_texture_transform extension]. The eight-model test suite tests many aspects of rendering available in the Core specification.
 
 The naming of models and screen shots are important for proper operation of the certification test. Table 1 describes the model and screen file naming convention
 
