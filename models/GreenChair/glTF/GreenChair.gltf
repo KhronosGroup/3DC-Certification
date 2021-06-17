@@ -346,9 +346,9 @@
 	"asset": {
 		"copyright": "Copyright © IKEA Systems B.V. (“IKEA”) 2020 The data contained in the GreenChair.glb (binary) and .gltf files (the “Licensed Material”) is licensed by IKEA under the Creative Commons Attribution 4.0 International Public License (CC BY 4.0) for the evaluation and development of an open technology standard for 3D models. The Licensed Material is limited to 3D modelling data/technology and does not include any IKEA products/objects. IKEA reserves the exclusive rights to the design, copyright and other intellectual property rights in the Licensed Materials as well as in its products/objects.",
 		"extras": {
-			"created": "Tue May  4 11:44:06 2021"
+			"created": "Thu Jun 17 07:12:04 2021"
 		},
-		"generator": "Gestaltor 2021.3.1 Wheat Professional - Evaluation day 6/30 (dev-e497d3c*)",
+		"generator": "Gestaltor 2021.4.1 Rye Community (dev-ffd4dc9)",
 		"version": "2.0"
 	},
 	"bufferViews": [
@@ -543,7 +543,6 @@
 		{
 			"name": "camera0",
 			"perspective": {
-				"aspectRatio": 1.7777777777777777,
 				"yfov": 0.39959652046304894,
 				"zfar": 100.0,
 				"znear": 0.10000000149011612
@@ -553,7 +552,6 @@
 		{
 			"name": "camera1",
 			"perspective": {
-				"aspectRatio": 1.7777777777777777,
 				"yfov": 0.39959652046304894,
 				"zfar": 100.0,
 				"znear": 0.10000000149011612
@@ -563,7 +561,6 @@
 		{
 			"name": "camera2",
 			"perspective": {
-				"aspectRatio": 1.7777777777777777,
 				"yfov": 0.25178630405316277,
 				"zfar": 100.0,
 				"znear": 0.10000000149011612
