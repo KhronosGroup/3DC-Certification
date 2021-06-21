@@ -43,7 +43,7 @@ The general rendered image requirements are described. These are taken directly 
 
 [[rendered-inmage-requirements]]
 = Rendered Image Requirements
-The Certification Program Test Plan document defines the detailed requirements for generating the certification images. This is done in Section 4. Unless otherwise specified, all models are lit with a neutral image-base-light (IBL) and are displayed against a uniform white background. All certification images are at least 1024x1024 preferred size) displayed according to the embedded cameras. The five retail models have three cameras each. One of the analytical models (spheres) is displayed in four different IBLs. All certification images need to be created according to the rules specified in the Test Plan document.
+The Certification Program Test Plan document defines the detailed requirements for generating the certification images. This is done in Section 4. Unless otherwise specified, all models are lit with a neutral image-base-light (IBL) and are displayed against a uniform white background. All certification images has to be of size 1024x1024 (exact size) displayed according to the embedded cameras. The five retail models have three cameras each. One of the analytical models (spheres) is displayed in four different IBLs. All certification images need to be created according to the rules specified in the Test Plan document.
 
 [[models-criteria]]
 = Models Criteria
