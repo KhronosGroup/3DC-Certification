@@ -148,4 +148,5 @@ if __name__ == "__main__":
             results[name]["images"]["candidate_path"] = candidate_path
             results[name]["images"]["diff_path"] = diff_image_path
 
-    report.generate_report_document(results, output_path / "report.pdf", args.name)
+    if output_path:
+        report.generate_report_document(results, output_path / "report.pdf", args.name)
