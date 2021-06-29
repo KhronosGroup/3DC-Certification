@@ -72,7 +72,9 @@ def print_report(metrics_report):
     print("")
 
 def compare_images(reference, candidate):
-    diff = skimage.util.compare_images(skimage.color.rgba2rgb(reference), skimage.color.rgba2rgb(candidate), method='diff')
+    diff = skimage.util.compare_images(reference, candidate, method='diff')
+    if diff.shape[2] == 4:
+        diff.putalpha(1.0)
     return {
         "reference": reference,
         "candidate": candidate,
@@ -81,7 +83,7 @@ def compare_images(reference, candidate):
 
 def evaluate(name, reference, candidate):
     if candidate.shape[2] == 3:
-        reference = skimage.color.rgba2rgb(reference)
+        reference = skimage.util.img_as_ubyte(skimage.color.rgba2rgb(reference))
 
     if reference.shape != candidate.shape:
         print(f"Candidate images must be in (1024, 1024) resolution, but were {candidate.shape[:2]}")
@@ -106,21 +108,21 @@ if __name__ == "__main__":
 
     cert_path = Path(args.rep)
     screenshots_dir = Path(args.dir)
-    plot_path = None
+    diff_path = None
     if args.plot_dir:
-        plot_path = Path(args.plot_dir)
-        os.makedirs(plot_path, exist_ok=True)
+        diff_path = Path(args.plot_dir)
+        os.makedirs(diff_path, exist_ok=True)
     
     image_pairs = gather_image_pairs(cert_path, screenshots_dir)
     for reference_path, candidate_path in image_pairs:
         im1 = skimage.io.imread(reference_path)
-        im2 = skimage.io.imread(candidate_path)
+        im2 = skimage.util.img_as_ubyte(skimage.io.imread(candidate_path))
         name = reference_path.name.replace("rr-", "", 1).replace(".png", "")
 
         report = evaluate(name, im1, im2)
         
         print_report(report)
-        if plot_path:
-            # skimage.io.imsave(path / f"rr-{name}.png", report["images"]["reference"])
-            # skimage.io.imsave(path / f"c-{name}.png", report["images"]["candidate"])
-            skimage.io.imsave(plot_path / f"d-{name}.png", report["images"]["diff"], check_contrast=False)
+        if diff_path:
+            skimage.io.imsave(diff_path / f"rr-{name}.png", report["images"]["reference"])
+            skimage.io.imsave(diff_path / f"c-{name}.png", report["images"]["candidate"])
+            skimage.io.imsave(diff_path / f"d-{name}.png", report["images"]["diff"], check_contrast=False)
