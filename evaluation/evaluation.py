@@ -33,21 +33,26 @@ def evaluate_metrics(reference, candidate):
         # further reading: https://medium.com/srm-mic/all-about-structural-similarity-index-ssim-theory-code-in-pytorch-6551b455541e
         # https://en.wikipedia.org/wiki/Structural_similarity
         "ssim": skimage.metrics.structural_similarity(reference, candidate, multichannel=True),
+        
         # Mean Squared Error (MSE) is one of the most commonly used image quality measures, but receives strong criticism as
         # it doesn't reflect the way the human visual systems perceive images very well. An image pair with
         # high MSE might still look very similar to a human.
         # "mse": skimage.metrics.mean_squared_error(reference, candidate),
         # Peak Signal to Noise Ratio (PSNR) is based on MSE and brought to a logarithmic scale in the decibel unit
         "psnr": skimage.metrics.peak_signal_noise_ratio(reference, candidate),
+        
         # Normalized Root MSE (NRMSE)
         # "nrmse": skimage.metrics.normalized_root_mse(reference, candidate),
+        
         # Mean Absolute Error (MAE)
         # "mae": np.absolute(np.subtract(reference, candidate)).mean(),
+        
         # Visual Information Fidelity Measure (VIF)
         # https://ieeexplore.ieee.org/abstract/document/1576816/
         # The higher the better. The reference image would yield a value of 1.0, values above 1.0
         # typically stem from higher contrast images, which are considerered better quality in this metric
         # "vif": vifp(reference, candidate),
+        
         # Universal Quality Index (UQI)
         # "uqi": uqi(reference, candidate),
     }
