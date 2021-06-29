@@ -79,11 +79,6 @@ def print_report(name, metrics_report):
     print("")
 
 def compare_images(reference, candidate):
-
-    if reference.shape[2] == 4:
-        reference = skimage.color.rgba2rgb(reference)
-    if candidate.shape[2] == 4:
-        candidate = skimage.color.rgba2rgb(candidate)
     diff = skimage.util.compare_images(reference, candidate, method='diff')
 
     return {
@@ -93,9 +88,6 @@ def compare_images(reference, candidate):
     }
 
 def evaluate(reference, candidate):
-    if candidate.shape[2] == 3:
-        reference = skimage.util.img_as_ubyte(skimage.color.rgba2rgb(reference))
-
     metrics = evaluate_metrics(reference, candidate)
 
     return {
@@ -103,6 +95,23 @@ def evaluate(reference, candidate):
         "passed": evaluate_passed(metrics),
         "images": compare_images(reference, candidate),
     }
+
+def normalize_images(reference, candidate):
+    # Ensure images match in channel count
+    if reference.shape[2] == 4:
+        reference = skimage.color.rgba2rgb(reference)
+        reference = skimage.util.img_as_ubyte(reference)
+    if candidate.shape[2] == 4:
+        candidate = skimage.color.rgba2rgb(candidate)
+        candidate = skimage.util.img_as_ubyte(candidate)
+    # Ensure images match in resolution
+    if candidate.shape != reference.shape:
+        print(f"⚠️  Resizing {candidate_path} from {candidate.shape[:2]} to {reference.shape[:2]}")
+        candidate = skimage.transform.resize(candidate, (reference.shape[0], reference.shape[1]),
+                    anti_aliasing=False)
+        candidate = skimage.util.img_as_ubyte(candidate)
+        print()
+    return reference, candidate
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Generate screenshots for certification')
@@ -119,34 +128,30 @@ if __name__ == "__main__":
         output_path = Path(args.output)
         os.makedirs(output_path, exist_ok=True)
         os.makedirs(output_path / "diffs", exist_ok=True)
-    
+    # scan the filesystem for test case images
     image_pairs = gather_image_pairs(cert_path, screenshots_dir)
 
     results = {}
     for reference_path, candidate_path in image_pairs:
         im1 = skimage.io.imread(reference_path)
         im2 = skimage.util.img_as_ubyte(skimage.io.imread(candidate_path))
-
-        if im2.shape != im1.shape:
-            print(f"⚠️  Resizing {candidate_path} from {im2.shape[:2]} to {im1.shape[:2]}")
-            im2 = skimage.transform.resize(im2, (im1.shape[0], im1.shape[1]),
-                        anti_aliasing=False)
-            im2 = skimage.util.img_as_ubyte(im2)
-            print()
-
+        im1, im2 = normalize_images(im1, im2)
+        # Extract the test case name from the reference file
         name = reference_path.name.replace("rr-", "", 1).replace(".png", "")
-
+        # Compute metrics and compare images
         results[name] = evaluate(im1, im2)
-        
+        # CLI output
         print_report(name, results[name])
+        # add image paths to results
+        results[name]["images"]["candidate_path"] = candidate_path
+        results[name]["images"]["reference_path"] = reference_path
+        # write a diff image
         if output_path:
             diff_image_path = output_path / "diffs" / f"d-{name}.png"
             # skimage.io.imsave(output_path / f"rr-{name}.png", results[name]["images"]["reference"])
             # skimage.io.imsave(output_path / f"c-{name}.png", results[name]["images"]["candidate"])
             skimage.io.imsave(diff_image_path, results[name]["images"]["diff"], check_contrast=False)
-            results[name]["images"]["reference_path"] = reference_path
-            results[name]["images"]["candidate_path"] = candidate_path
             results[name]["images"]["diff_path"] = diff_image_path
-
+    # generate a PDF containing all results
     if output_path:
         report.generate_report_document(results, output_path / "report.pdf", args.name)
