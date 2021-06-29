@@ -55,9 +55,9 @@ def evaluate_passed(metrics):
     # are strict enough to ensure visual similarity but not be too strict at the same time
     return {
         # Choose a relaxed value for SSIM
-        "ssim": metrics["ssim"] > 0.95,
+        "ssim": metrics["ssim"] > 0.90,
         # PSNR for image compression in 8bit is typically in the range [30, 50]
-        "psnr": metrics["psnr"] > 35.0,
+        "psnr": metrics["psnr"] > 30.0, # maybe 32
     }
 
 def print_report(metrics_report):
