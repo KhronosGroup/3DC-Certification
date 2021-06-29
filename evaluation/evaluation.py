@@ -45,7 +45,7 @@ def evaluate_metrics(reference, candidate):
         # https://ieeexplore.ieee.org/abstract/document/1576816/
         # The higher the better. The reference image would yield a value of 1.0, values above 1.0
         # typically stem from higher contrast images, which are considerered better quality in this metric
-        "vif": vifp(reference, candidate),
+        # "vif": vifp(reference, candidate),
         # Universal Quality Index (UQI)
         "uqi": uqi(reference, candidate),
     }
@@ -71,31 +71,56 @@ def print_report(metrics_report):
 
     print("")
 
+def compare_images(reference, candidate):
+    diff = skimage.util.compare_images(skimage.color.rgba2rgb(reference), skimage.color.rgba2rgb(candidate), method='diff')
+    return {
+        "reference": reference,
+        "candidate": candidate,
+        "diff": skimage.util.img_as_ubyte(diff),
+    }
+
+def evaluate(name, reference, candidate):
+    if candidate.shape[2] == 3:
+        reference = skimage.color.rgba2rgb(reference)
+
+    if reference.shape != candidate.shape:
+        print(f"Candidate images must be in (1024, 1024) resolution, but were {candidate.shape[:2]}")
+        exit()
+
+    metrics = evaluate_metrics(reference, candidate)
+
+    return {
+        "name": name,
+        "metrics": metrics,
+        "passed": evaluate_passed(metrics),
+        "images": compare_images(reference, candidate),
+    }
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Generate screenshots for certification')
     parser.add_argument("--rep", help="Path to the certification repository", default="..")
     parser.add_argument("--dir", help="Path to folder with the generated screenshots")
+    parser.add_argument("--plot_dir", help="Path to which to store comparison plots")
     args = parser.parse_args()
 
     cert_path = Path(args.rep)
     screenshots_dir = Path(args.dir)
+    plot_path = None
+    if args.plot_dir:
+        plot_path = Path(args.plot_dir)
+        os.makedirs(plot_path, exist_ok=True)
     
     image_pairs = gather_image_pairs(cert_path, screenshots_dir)
     for reference_path, candidate_path in image_pairs:
-        
-        im1 = skimage.util.img_as_float(skimage.io.imread(reference_path))
-        im2 = skimage.util.img_as_float(skimage.io.imread(candidate_path))
-        if im2.shape[2] == 3:
-            im1 = skimage.color.rgba2rgb(im1)
-
+        im1 = skimage.io.imread(reference_path)
+        im2 = skimage.io.imread(candidate_path)
         name = reference_path.name.replace("rr-", "", 1).replace(".png", "")
-        metrics = evaluate_metrics(im1, im2)
-        passed = evaluate_passed(metrics)
 
-        report = {
-            "name": name,
-            "metrics": metrics,
-            "passed": passed
-        }
+        report = evaluate(name, im1, im2)
         
         print_report(report)
+        if plot_path:
+            # skimage.io.imsave(path / f"rr-{name}.png", report["images"]["reference"])
+            # skimage.io.imsave(path / f"c-{name}.png", report["images"]["candidate"])
+            skimage.io.imsave(plot_path / f"d-{name}.png", report["images"]["diff"], check_contrast=False)
