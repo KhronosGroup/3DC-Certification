@@ -54,7 +54,7 @@ def generate_report_document(report_data, path, name):
         images_data = [
             [ 
                 Paragraph("Reference", stylesheet["Heading4"]), 
-                Paragraph("Candidate", stylesheet["Heading4"]), 
+                Paragraph("Submission", stylesheet["Heading4"]), 
                 Paragraph("Difference", stylesheet["Heading4"])
             ],
             [
