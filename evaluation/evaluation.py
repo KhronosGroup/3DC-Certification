@@ -7,6 +7,7 @@ import skimage.io
 import skimage.metrics
 import skimage.color
 import skimage.util
+import skimage.transform
 import numpy as np
 import itertools
 from sewar.full_ref import vifp, uqi
@@ -90,10 +91,6 @@ def evaluate(reference, candidate):
     if candidate.shape[2] == 3:
         reference = skimage.util.img_as_ubyte(skimage.color.rgba2rgb(reference))
 
-    if reference.shape != candidate.shape:
-        print(f"Candidate images must be in (1024, 1024) resolution, but were {candidate.shape[:2]}")
-        exit()
-
     metrics = evaluate_metrics(reference, candidate)
 
     return {
@@ -124,6 +121,14 @@ if __name__ == "__main__":
     for reference_path, candidate_path in image_pairs:
         im1 = skimage.io.imread(reference_path)
         im2 = skimage.util.img_as_ubyte(skimage.io.imread(candidate_path))
+
+        if im2.shape != im1.shape:
+            print(f"⚠️  Resizing {candidate_path} from {im2.shape[:2]} to {im1.shape[:2]}")
+            im2 = skimage.transform.resize(im2, (im1.shape[0], im1.shape[1]),
+                        anti_aliasing=False)
+            im2 = skimage.util.img_as_ubyte(im2)
+            print()
+
         name = reference_path.name.replace("rr-", "", 1).replace(".png", "")
 
         results[name] = evaluate(im1, im2)
