@@ -59,7 +59,7 @@ def evaluate_metrics(reference, candidate):
     
 def evaluate_passed(metrics):
     # TODO: the values here are just suggestions, we have to evaluate which values
-    # are strict enough to ensure visual similarity but not be too strict at the same time
+    # are strict enough to ensure visual similarity, while allowing subtle differences
     return {
         # Choose a relaxed value for SSIM
         "ssim": metrics["ssim"] > 0.90,
