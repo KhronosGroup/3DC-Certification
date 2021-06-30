@@ -9,15 +9,12 @@ def generate_report_document(report_data, path, name):
     doc = SimpleDocTemplate(str(path.absolute()),
                         rightMargin=18,leftMargin=18,
                         topMargin=72,bottomMargin=18)
-    
     stylesheet = getSampleStyleSheet()
-
     story=[]
 
+    # Header
     story.append(Paragraph(f"{name} - Certification Report",  stylesheet["Heading1"]))
-
     story.append(Paragraph(f"{time.ctime()}"))
-
     story.append(Spacer(1, 12))
 
     # List each test case with results
@@ -48,9 +45,9 @@ def generate_report_document(report_data, path, name):
             ('BOX', (0,0), (-1,-1), 0.25, colors.black),
         ]))
         story.append(t)
-
         story.append(Spacer(1, 12))
 
+        # Image Comparison
         images_data = [
             [ 
                 Paragraph("Reference", stylesheet["Heading4"]), 
@@ -69,8 +66,6 @@ def generate_report_document(report_data, path, name):
             ('BOX', (0,0), (-1,-1), 0.25, colors.black),
         ]))
         story.append(t)
-
         story.append(Spacer(1, 12))
         
-
     doc.build(story)
