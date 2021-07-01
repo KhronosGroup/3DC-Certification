@@ -8,6 +8,7 @@ import skimage.metrics
 import skimage.color
 import skimage.util
 import skimage.transform
+import skimage.filters
 import numpy as np
 import itertools
 from sewar.full_ref import vifp, uqi
@@ -30,7 +31,7 @@ def evaluate_metrics(reference, candidate):
         # ssim provides much better results when applied to small patches of the image than on its entirety. Typically an 11x11 window is used.
         # ssim provides scores from -1 (not similar) to 1 (same image).
         # ssim provides high scores one of the images is blured or the color space is shifted
-        # further reading: https://medium.com/srm-mic/all-about-structural-similarity-index-ssim-theory-code-in-pytorch-6551b455541e
+        # further reading:
         # https://en.wikipedia.org/wiki/Structural_similarity
         "ssim": skimage.metrics.structural_similarity(reference, candidate, multichannel=True),
         
@@ -62,9 +63,9 @@ def evaluate_passed(metrics):
     # are strict enough to ensure visual similarity, while allowing subtle differences
     return {
         # Choose a relaxed value for SSIM
-        "ssim": metrics["ssim"] > 0.90,
+        "ssim": metrics["ssim"] > 0.85,
         # PSNR for image compression in 8bit is typically in the range [30, 50]
-        "psnr": metrics["psnr"] > 30.0, # maybe 32
+        "psnr": metrics["psnr"] > 20.0, 
     }
 
 def print_report(name, metrics_report):
@@ -80,11 +81,13 @@ def print_report(name, metrics_report):
 
 def compare_images(reference, candidate):
     diff = skimage.util.compare_images(reference, candidate, method='diff')
+    threshold = diff > 0.05
 
     return {
         "reference": reference,
         "candidate": candidate,
         "diff": skimage.util.img_as_ubyte(diff),
+        "threshold": skimage.util.img_as_ubyte(threshold)
     }
 
 def evaluate(reference, candidate):
@@ -128,6 +131,7 @@ if __name__ == "__main__":
         output_path = Path(args.output)
         os.makedirs(output_path, exist_ok=True)
         os.makedirs(output_path / "diffs", exist_ok=True)
+        os.makedirs(output_path / "thresholds", exist_ok=True)
     # scan the filesystem for test case images
     image_pairs = gather_image_pairs(cert_path, screenshots_dir)
 
@@ -152,6 +156,9 @@ if __name__ == "__main__":
             # skimage.io.imsave(output_path / f"c-{name}.png", results[name]["images"]["candidate"])
             skimage.io.imsave(diff_image_path, results[name]["images"]["diff"], check_contrast=False)
             results[name]["images"]["diff_path"] = diff_image_path
+            thresholds_image_path = output_path / "thresholds" / f"d-{name}.png"
+            skimage.io.imsave(thresholds_image_path, results[name]["images"]["threshold"], check_contrast=False)
+            results[name]["images"]["threshold_path"] = thresholds_image_path
     # generate a PDF containing all results
     if output_path:
         report.generate_report_document(results, output_path / "report.pdf", args.name)
