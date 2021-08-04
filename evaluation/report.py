@@ -4,6 +4,25 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, Tabl
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 from reportlab.lib import colors
+import json
+
+def generate_report_json(report_data, path):
+    report = { 
+        k: { 
+            "metrics" : v["metrics"],
+            "passed": v["passed"],
+            "image_paths": {
+                key: str(path) 
+                for (key, path) 
+                in v["image_paths"].items()
+            }
+        }
+        for (k, v) 
+        in report_data.items()
+    }
+
+    with open(path, 'w') as f:
+        json.dump(report, f, indent=4)
 
 def generate_report_document(report_data, path, name):
     doc = SimpleDocTemplate(str(path.absolute()),
@@ -56,10 +75,10 @@ def generate_report_document(report_data, path, name):
                 Paragraph("5% Threshold", stylesheet["Heading4"]),
             ],
             [
-                Image(result["images"]["reference_path"], width=1.8*inch, height=1.8*inch),
-                Image(result["images"]["candidate_path"], width=1.8*inch, height=1.8*inch),
-                Image(result["images"]["diff_path"], width=1.8*inch, height=1.8*inch),
-                Image(result["images"]["threshold_path"], width=1.8*inch, height=1.8*inch),
+                Image(result["image_paths"]["reference"], width=1.8*inch, height=1.8*inch),
+                Image(result["image_paths"]["candidate"], width=1.8*inch, height=1.8*inch),
+                Image(result["image_paths"]["diff"], width=1.8*inch, height=1.8*inch),
+                Image(result["image_paths"]["threshold"], width=1.8*inch, height=1.8*inch),
             ]
         ]
         t = Table(images_data, 4 * [2 * inch])
