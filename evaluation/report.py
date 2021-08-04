@@ -1,6 +1,6 @@
 import time
 from reportlab.lib.enums import TA_JUSTIFY
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, Table, TableStyle
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, Table, TableStyle, PageBreak
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 from reportlab.lib import colors, pagesizes
@@ -41,6 +41,8 @@ def generate_report_document(report_data, path, name):
     story.append(Paragraph(f"{name} - Certification Report",  stylesheet["Heading1"]))
     story.append(Paragraph(f"{time.ctime()}"))
     story.append(Spacer(1, 12))
+
+    story.append(PageBreak())
 
     # List each test case with results
     for name, result in report_data.items():
@@ -134,5 +136,7 @@ def generate_report_document(report_data, path, name):
         ]))
         story.append(t)
         story.append(Spacer(1, 12))
+
+        story.append(PageBreak())
         
     doc.build(story)
