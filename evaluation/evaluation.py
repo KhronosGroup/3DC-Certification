@@ -118,10 +118,10 @@ def normalize_images(reference, candidate):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Generate screenshots for certification')
-    parser.add_argument("--rep", "-r", help="Path to the certification repository", default="..")
-    parser.add_argument("--dir", "-d", help="Path to folder with the generated screenshots")
-    parser.add_argument("--name", "-n", required=True, help="Name of the certification submission")
+    parser.add_argument("--rep", "-r", help="Path to the certification repository (defaults to \"..\")", default="..")
+    parser.add_argument("--name", "-n", help="Name of the certification submission", default="")
     parser.add_argument("--output", "-o", help="Output directory for results")
+    parser.add_argument("dir", help="Path to the test results package (the candidate submission)")
     args = parser.parse_args()
 
     cert_path = Path(args.rep)
@@ -169,7 +169,7 @@ if __name__ == "__main__":
             diff_image_path = Path("diffs") / f"d-{name}.png"
             skimage.io.imsave(output_path / diff_image_path, results[name]["images"]["diff"], check_contrast=False)
             results[name]["image_paths"]["diff"] = diff_image_path
-            
+
             # save the threshold image
             thresholds_image_path = Path("thresholds") / f"t-{name}.png"
             skimage.io.imsave(output_path / thresholds_image_path, results[name]["images"]["threshold"], check_contrast=False)
