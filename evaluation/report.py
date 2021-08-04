@@ -10,22 +10,26 @@ def generate_report_json(report_data, path):
     report = { 
         k: { 
             "metrics" : v["metrics"],
-            "passed": v["passed"],
+            "passed": {
+                key: bool(passed)
+                for (key, passed) 
+                in v["passed"].items()
+            },
             "image_paths": {
-                key: str(path) 
-                for (key, path) 
+                key: str(p) 
+                for (key, p) 
                 in v["image_paths"].items()
             }
         }
-        for (k, v) 
+        for (k, v)
         in report_data.items()
     }
 
-    with open(path, 'w') as f:
+    with open(path / "report.json", 'w') as f:
         json.dump(report, f, indent=4)
 
 def generate_report_document(report_data, path, name):
-    doc = SimpleDocTemplate(str(path.absolute()),
+    doc = SimpleDocTemplate(str(path.absolute() / "report.pdf"),
                         rightMargin=18,leftMargin=18,
                         topMargin=72,bottomMargin=18)
     stylesheet = getSampleStyleSheet()
@@ -75,10 +79,10 @@ def generate_report_document(report_data, path, name):
                 Paragraph("5% Threshold", stylesheet["Heading4"]),
             ],
             [
-                Image(result["image_paths"]["reference"], width=1.8*inch, height=1.8*inch),
-                Image(result["image_paths"]["candidate"], width=1.8*inch, height=1.8*inch),
-                Image(result["image_paths"]["diff"], width=1.8*inch, height=1.8*inch),
-                Image(result["image_paths"]["threshold"], width=1.8*inch, height=1.8*inch),
+                Image(path / result["image_paths"]["reference"], width=1.8*inch, height=1.8*inch),
+                Image(path / result["image_paths"]["candidate"], width=1.8*inch, height=1.8*inch),
+                Image(path / result["image_paths"]["diff"], width=1.8*inch, height=1.8*inch),
+                Image(path / result["image_paths"]["threshold"], width=1.8*inch, height=1.8*inch),
             ]
         ]
         t = Table(images_data, 4 * [2 * inch])

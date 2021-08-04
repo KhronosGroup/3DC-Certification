@@ -63,9 +63,9 @@ def evaluate_passed(metrics):
     # are strict enough to ensure visual similarity, while allowing subtle differences
     return {
         # Choose a relaxed value for SSIM
-        "ssim": bool(metrics["ssim"] > 0.85),
+        "ssim": metrics["ssim"] > 0.85,
         # PSNR for image compression in 8bit is typically in the range [30, 50]
-        "psnr": bool(metrics["psnr"] > 20.0), 
+        "psnr": metrics["psnr"] > 20.0, 
     }
 
 def print_report(name, metrics_report):
@@ -122,7 +122,6 @@ if __name__ == "__main__":
     parser.add_argument("--dir", "-d", help="Path to folder with the generated screenshots")
     parser.add_argument("--name", "-n", required=True, help="Name of the certification submission")
     parser.add_argument("--output", "-o", help="Output directory for results")
-    parser.add_argument("--copy_inputs", action="store_true", help="Copy the reference and candidate images to the output directory")
     args = parser.parse_args()
 
     cert_path = Path(args.rep)
@@ -131,9 +130,8 @@ if __name__ == "__main__":
     if args.output:
         output_path = Path(args.output)
         os.makedirs(output_path, exist_ok=True)
-        if args.copy_inputs:
-            os.makedirs(output_path / "reference", exist_ok=True)
-            os.makedirs(output_path / "candidate", exist_ok=True)
+        os.makedirs(output_path / "reference", exist_ok=True)
+        os.makedirs(output_path / "candidate", exist_ok=True)
         os.makedirs(output_path / "diffs", exist_ok=True)
         os.makedirs(output_path / "thresholds", exist_ok=True)
     # scan the filesystem for test case images
@@ -159,24 +157,24 @@ if __name__ == "__main__":
             results[name]["image_paths"]["reference"] = reference_path
 
             # save the input images to the output directory
-            if args.copy_inputs:
-                reference_image_path = output_path / "reference" / f"rr-{name}.png"
-                skimage.io.imsave(reference_image_path, results[name]["images"]["reference"])
-                results[name]["image_paths"]["reference"] = reference_image_path
-                
-                candidate_image_path = output_path / "candidate" / f"c-{name}.png"
-                skimage.io.imsave(candidate_image_path, results[name]["images"]["candidate"])
-                results[name]["image_paths"]["candidate"] = candidate_image_path
+            reference_image_path = Path("reference") / f"rr-{name}.png"
+            skimage.io.imsave(output_path / reference_image_path, results[name]["images"]["reference"])
+            results[name]["image_paths"]["reference"] = reference_image_path
+            
+            candidate_image_path = Path("candidate") / f"c-{name}.png"
+            skimage.io.imsave(output_path / candidate_image_path, results[name]["images"]["candidate"])
+            results[name]["image_paths"]["candidate"] = candidate_image_path
 
             # save the diff image
-            diff_image_path = output_path / "diffs" / f"d-{name}.png"
-            skimage.io.imsave(diff_image_path, results[name]["images"]["diff"], check_contrast=False)
+            diff_image_path = Path("diffs") / f"d-{name}.png"
+            skimage.io.imsave(output_path / diff_image_path, results[name]["images"]["diff"], check_contrast=False)
             results[name]["image_paths"]["diff"] = diff_image_path
+            
             # save the threshold image
-            thresholds_image_path = output_path / "thresholds" / f"t-{name}.png"
-            skimage.io.imsave(thresholds_image_path, results[name]["images"]["threshold"], check_contrast=False)
+            thresholds_image_path = Path("thresholds") / f"t-{name}.png"
+            skimage.io.imsave(output_path / thresholds_image_path, results[name]["images"]["threshold"], check_contrast=False)
             results[name]["image_paths"]["threshold"] = thresholds_image_path
     # generate a PDF containing all results
     if output_path:
-        report.generate_report_document(results, output_path / "report.pdf", args.name)
-        report.generate_report_json(results, output_path / "report.json")
+        report.generate_report_document(results, output_path, args.name)
+        report.generate_report_json(results, output_path)
