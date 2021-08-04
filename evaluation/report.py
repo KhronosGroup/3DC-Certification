@@ -3,7 +3,7 @@ from reportlab.lib.enums import TA_JUSTIFY
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, Table, TableStyle
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
-from reportlab.lib import colors
+from reportlab.lib import colors, pagesizes
 import json
 
 def generate_report_json(report_data, path):
@@ -29,10 +29,12 @@ def generate_report_json(report_data, path):
         json.dump(report, f, indent=4)
 
 def generate_report_document(report_data, path, name):
-    doc = SimpleDocTemplate(str(path.absolute() / "report.pdf"),
+    doc = SimpleDocTemplate(str(path.absolute() / "report.pdf"), 
+                        pagesize=pagesizes.A4,
                         rightMargin=18,leftMargin=18,
                         topMargin=72,bottomMargin=18)
     stylesheet = getSampleStyleSheet()
+
     story=[]
 
     # Header
@@ -45,6 +47,7 @@ def generate_report_document(report_data, path, name):
         story.append(Paragraph(name, stylesheet["Heading2"]))
 
         # Evaluated metrics
+        cell_size = (doc.width / 3)
         metrics_data = [
             [
                 Paragraph("Metric", stylesheet["Heading4"]),
@@ -62,33 +65,72 @@ def generate_report_document(report_data, path, name):
                 Paragraph("Above Threshold" if result["passed"]["psnr"] else '<font color="orange">Below Threshold</font>')
             ],
         ]
-        t = Table(metrics_data, 3 * [2.5 * inch])
+        t = Table(metrics_data, 3 * [cell_size])
         t.setStyle(TableStyle([
-            ('INNERGRID', (0,0), (-1,-1), 0.25, colors.black),
-            ('BOX', (0,0), (-1,-1), 0.25, colors.black),
+            ('GRID', (0,0), (-1,-1), 0.25, colors.black),
         ]))
         story.append(t)
         story.append(Spacer(1, 12))
 
-        # Image Comparison
+        # Candidate and reference image
+        image_size = (doc.width / 2)
+        margin = {"left": 6, "right": 6, "top": 6, "bottom": 6}
         images_data = [
             [ 
                 Paragraph("Reference", stylesheet["Heading4"]), 
                 Paragraph("Submission", stylesheet["Heading4"]), 
+            ],
+            [
+                Image(
+                    path / result["image_paths"]["reference"], 
+                    width=image_size - (margin["left"] + margin["right"]), 
+                    height=image_size - (margin["top"] + margin["bottom"])
+                ),
+                Image(
+                    path / result["image_paths"]["candidate"], 
+                    width=image_size - (margin["left"] + margin["right"]), 
+                    height=image_size - (margin["top"] + margin["bottom"])
+                ),
+            ]
+        ]
+        t = Table(images_data, 2 * [image_size])
+        t.setStyle(TableStyle([
+            ('GRID', (0,0), (-1,-1), 0.25, colors.black),
+            ('LEFTPADDING', (0, 1), (-1, -1), margin["left"]),
+            ('RIGHTPADDING', (0, 1), (-1, -1), margin["right"]),
+            ('TOPPADDING', (0, 1), (-1, -1), margin["top"]),
+            ('BOTTOMPADDING', (0, 1), (-1, -1), margin["bottom"])
+        ]))
+        story.append(t)
+        story.append(Spacer(1, 12))
+
+        # computed images
+        image_size = (doc.width / 2)
+        images_data = [
+            [ 
                 Paragraph("Difference", stylesheet["Heading4"]),
                 Paragraph("5% Threshold", stylesheet["Heading4"]),
             ],
             [
-                Image(path / result["image_paths"]["reference"], width=1.8*inch, height=1.8*inch),
-                Image(path / result["image_paths"]["candidate"], width=1.8*inch, height=1.8*inch),
-                Image(path / result["image_paths"]["diff"], width=1.8*inch, height=1.8*inch),
-                Image(path / result["image_paths"]["threshold"], width=1.8*inch, height=1.8*inch),
+                Image(
+                    path / result["image_paths"]["diff"], 
+                    width=image_size - (margin["left"] + margin["right"]), 
+                    height=image_size - (margin["top"] + margin["bottom"])
+                ),
+                Image(
+                    path / result["image_paths"]["threshold"], 
+                    width=image_size - (margin["left"] + margin["right"]), 
+                    height=image_size - (margin["top"] + margin["bottom"])
+                ),
             ]
         ]
-        t = Table(images_data, 4 * [2 * inch])
+        t = Table(images_data, 2 * [image_size])
         t.setStyle(TableStyle([
-            ('INNERGRID', (0,0), (-1,-1), 0.25, colors.black),
-            ('BOX', (0,0), (-1,-1), 0.25, colors.black),
+            ('GRID', (0,0), (-1,-1), 0.25, colors.black),
+            ('LEFTPADDING', (0, 1), (-1, -1), margin["left"]),
+            ('RIGHTPADDING', (0, 1), (-1, -1), margin["right"]),
+            ('TOPPADDING', (0, 1), (-1, -1), margin["top"]),
+            ('BOTTOMPADDING', (0, 1), (-1, -1), margin["bottom"])
         ]))
         story.append(t)
         story.append(Spacer(1, 12))
