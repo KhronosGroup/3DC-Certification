@@ -48,7 +48,7 @@ optional arguments:
 
 ⚠️ Ensure that you execute the `evaluation.py` script from within the `evaluation` subdirectory.
 
-⚠️ Please be aware that the `--rep` option should point to the directory of the [3DC-Certification](https://github.com/KhronosGroup/3DC-Certification) repository.
+⚠️ Please be aware that the `--rep` option should point to the directory of the [3DC-Certification](https://github.com/KhronosGroup/3DC-Certification) repository. If you have cloned the 3DC-Certification repository on your local machine and are executing the evaluation script from within this cloned repository __you can omit the `--rep` option__.
 
 ### Example
 
@@ -58,4 +58,4 @@ An example for how to evaluate a report for a __Test results package__ at `~/Des
 python3 evaluation.py --output ~/Desktop/Example_Evaluation_Results --name Example ~/Desktop/Example 
 ```
 
-This would then create a report PDF and JSON in `~/Desktop/Example_Evaluation_Results` and set the name of the submission in the document to `Example`.
+This command would then create a report PDF and JSON in `~/Desktop/Example_Evaluation_Results` and set the name of the submission in the document to `Example`.
