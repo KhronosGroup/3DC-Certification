@@ -137,6 +137,9 @@ if __name__ == "__main__":
     # scan the filesystem for test case images
     image_pairs = gather_image_pairs(cert_path, screenshots_dir)
 
+    if not image_pairs:
+        print(f"Didn't find matching image pairs for paths '{cert_path}' and '{screenshots_dir}'")
+
     results = {}
     for reference_path, candidate_path in image_pairs:
         reference_image = skimage.io.imread(reference_path)
