@@ -46,7 +46,9 @@ optional arguments:
                         Output directory for results
 ```
 
-Please be aware that the `--rep` option should point to the directory of the [3DC-Certification](https://github.com/KhronosGroup/3DC-Certification) repository.
+⚠️ Ensure that you execute the `evaluation.py` script from within the `evaluation` subdirectory.
+
+⚠️ Please be aware that the `--rep` option should point to the directory of the [3DC-Certification](https://github.com/KhronosGroup/3DC-Certification) repository.
 
 ### Example
 
