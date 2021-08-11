@@ -8,11 +8,7 @@ The 3DC-Certification repository with all the reference images in the `models` d
 
 ## Python dependencies
 
-Install Python3, e.g. using [Homebrew](https://brew.sh)
-
-```bash
-brew install python3
-```
+Install Python3, either via the OS package manager or via the installer from the website [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
 Install python packages
 
@@ -49,6 +45,8 @@ optional arguments:
   --output OUTPUT, -o OUTPUT
                         Output directory for results
 ```
+
+Please be aware that the `--rep` option should point to the directory of the [3DC-Certification](https://github.com/KhronosGroup/3DC-Certification) repository.
 
 ### Example
 
