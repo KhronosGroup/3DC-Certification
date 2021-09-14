@@ -269,8 +269,8 @@ The following table highlights the changes to this document made since initial r
 [width="100%",cols="^10%,>20%,<70%",frame="topbot",options="header"]
 |==========================
 | **Version** | **Release Date** | **Change**
-| V1.0 | 2021-05-31 | Initial release
-| V1.1 | 2021-09-23 | Change certificant image size to exactly 1024^2
+| V1.0.0 | 2021-05-31 | Initial release
+| V1.1.1 | 2021-09-23 | Change certificant image size to exactly 1024^2
 |==========================
 
 
