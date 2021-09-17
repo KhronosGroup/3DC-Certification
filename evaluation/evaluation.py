@@ -109,7 +109,7 @@ def normalize_images(reference, candidate):
         candidate = skimage.util.img_as_ubyte(candidate)
     # Ensure images match in resolution
     if candidate.shape != reference.shape:
-        print(f"⚠️  Resizing {candidate_path} from {candidate.shape[:2]} to {reference.shape[:2]}")
+        print(f"\n  Resizing {candidate_path} from {candidate.shape[:2]} to {reference.shape[:2]}")
         candidate = skimage.transform.resize(candidate, (reference.shape[0], reference.shape[1]),
                     anti_aliasing=False)
         candidate = skimage.util.img_as_ubyte(candidate)
