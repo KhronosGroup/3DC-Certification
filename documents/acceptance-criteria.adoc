@@ -5,7 +5,6 @@
 // :regtitle: is explained in
 // https://discuss.asciidoctor.org/How-to-add-markup-to-author-information-in-document-title-td6488.html
 = 3D Commerce{tmtitle} Certification Acceptance Criteria V1.1.1
-
 :tmtitle: pass:q,r[^™^]
 :regtitle: pass:q,r[^®^]
 The Khronos{regtitle} 3D Commerce Working Group
@@ -46,7 +45,7 @@ The general rendered image requirements are described. These are taken directly 
 = Rendered Image Requirements
 The Certification Program Test Plan document defines the detailed requirements for generating the certification images. This is done in Section 4. Unless otherwise specified, all models are lit with a neutral image-base-light (IBL) and are displayed against a uniform white background. All certification images must be 1024x1024 and displayed according to the embedded cameras. The five retail models have three cameras each. One of the analytical models (spheres) is displayed in four different IBLs. All certification images need to be created according to the rules specified in the Test Plan document.
 
-Certification renders will be evaluated programmatically and through human checks. When scored by the _evaluation_ tool inluded in the repository an SSIM of lower than _**X**_ and/or a PSNR of lower than _**X**_ will automatically flag the image for review. While these image evaluations are primarily to guide the Certifiers in their manual evaluations, it is likely that images which receive scores at or below the provided threshold will fail Certification. You may consider using the tool prior to submission and making changes if an image falls below the threshold.
+Certification renders will be evaluated programmatically and through human checks. When scored by the _evaluation_ tool included in the repository an SSIM or PSNR lower than their respective thresholds will automatically flag the image for review. The thresholds are stored in _thresholds.csv_ file in the _evaluation_ directory. While these image evaluations are primarily to guide the Certifiers in their manual evaluations, it is likely that images which receive scores at or below the provided threshold will fail Certification. You may consider using the tool prior to submission and making changes if an image falls below the threshold.
 
 Some common issues which cause failures include lighting discrepancies, problems with transparency, and clamps on roughness values.
 

@@ -94,7 +94,7 @@ Once all of the above information has been uploaded to the Khronos servers, the 
 [[How-to-Create-the-test-results]]
 = How to Create the Test Results
 
-It is necessary to generate screen captures of the model renderings. It is the responsibility of the certificant to provide and use software that will do that in a manner that preserves the fidelity of your viewer’s rendering system and creates an image file in PNG format. Each capture should be full screen at least 1024 pixels in short direction with the model centered in the capture. It is required that the capture be a square image of 1024 pixels in each direction. It may be necessary to post-process the image to resize it to 1024^2 pixels. This should be done in an application with the following requirements
+It is necessary to generate screen captures of the model renderings. It is the responsibility of the certificant to provide and use software that will do that in a manner that preserves the fidelity of your viewer’s rendering system and creates an image file in PNG format. Each capture should be full screen at least 1024 pixels in short direction with the model centered in the capture. It is required that the submission be a square image of 1024 pixels in each direction. It may be necessary to post-process the image to resize it to 1024^2 pixels. This should be done in an application with the following requirements
 
 * Preserves the aspect ratio of the image
 * Centers the model in the image at the same size as the reference images
