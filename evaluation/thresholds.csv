@@ -1,3 +1,3 @@
 'Update Date',2021-09-30
-'Minimum Good SSIM',
-'Minimum Good PSNR',
+ssim,0.7
+psnr,20
