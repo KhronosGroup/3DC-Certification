@@ -59,11 +59,13 @@ def evaluate_metrics(reference, candidate):
     }
     
 def evaluate_passed(metrics):
-    # TODO: the values here are just suggestions, we have to evaluate which values
-    # are strict enough to ensure visual similarity, while allowing subtle differences
+	# Through survey and analysis new threshold values were determined for ssim and psnr.
+	# These are the values in the code. The original source for these values is in thresholds.csv.
+	# The initial values were 0.85 and 20.0.
+	# Leonard Daly, 2021-10-07
     return {
         # Choose a relaxed value for SSIM
-        "ssim": metrics["ssim"] > 0.85,
+        "ssim": metrics["ssim"] > 0.70,
         # PSNR for image compression in 8bit is typically in the range [30, 50]
         "psnr": metrics["psnr"] > 20.0, 
     }
