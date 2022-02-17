@@ -4,7 +4,7 @@
 
 // :regtitle: is explained in
 // https://discuss.asciidoctor.org/How-to-add-markup-to-author-information-in-document-title-td6488.html
-= 3D Commerce{tmtitle} Certification Acceptance Criteria V1.0
+= 3D Commerce{tmtitle} Certification Acceptance Criteria V1.1.1
 :tmtitle: pass:q,r[^™^]
 :regtitle: pass:q,r[^®^]
 The Khronos{regtitle} 3D Commerce Working Group
@@ -42,19 +42,96 @@ This document is to guide the evaluators of 3D Commerce certification submission
 The general rendered image requirements are described. These are taken directly from the Test Plan document (*link tbd*) and those are considered authoritative. The minimal acceptance criteria is described for each model separately. The models are designed to test a breadth of rendering capabilities.
 
 [[rendered-inmage-requirements]]
-= Rendered Image Requirements
+= Rendered Image Requirement
+> main
+The Certification Program Test Plan document defines the detailed requirements for generating the certification images. This is done in Section 4. Unless otherwise specified, all models are lit with a neutral image-base-light (IBL) and are displayed against a uniform white background. All certification images must be 1024x1024 and displayed according to the embedded cameras. The five retail models have three cameras each. One of the analytical models (spheres) is displayed in four different IBLs. All certification images need to be created according to the rules specified in the Test Plan document.
+
+Certification renders will be evaluated programmatically and through human checks. When scored by the _evaluation_ tool included in the repository an SSIM or PSNR lower than their respective thresholds will automatically flag the image for review. The thresholds are stored in _thresholds.csv_ file in the _evaluation_ directory. While these image evaluations are primarily to guide the Certifiers in their manual evaluations, it is likely that images which receive scores at or below the provided threshold will fail Certification. You may consider using the tool prior to submission and making changes if an image falls below the threshold.
+c:\>c:\Python35\python -m venv c:\path\to\myenv
+> Renders c:\Draft
+Alternatively, if you configured the PATH and PATHEXT variables for your Python installation:
+
+c:\>python -m venv c:\path\to\myenv
+
+The command, if run with -h, will show the available options:
+
+usage: venv [-h] [--system-site-packages] [--symlinks | --copies] [--clear]
+
+            [--upgrade] [--without-pip] [--prompt PROMPT] [--upgrade-deps]
+
+            ENV_DIR [ENV_DIR ...]
+
+Creates virtual Python environments in one or more target directories.
+
+positional arguments:
+
+  ENV_DIR               A directory to create the environment in.
+
+optional arguments:
+
+  -h, --help            show this help message and exit
+
+  --system-site-packages
+
+                        Give the virtual environment access to the system
+
+                        site-packages dir.
+
+  --symlinks            Try to use symlinks rather than copies, when symlinks
+
+                        are not the default for the platform.
+
+  --copies              Try to use copies rather than symlinks, even when
+
+                        symlinks are the default for the platform.
+
+  --clear               Delete the contents of the environment directory if it
+
+                        already exists, before environment creation.
+
+  --upgrade             Upgrade the environment directory to use this version
+
+                        of Python, assuming Python has been upgraded in-place.
+
+  --without-pip         Skips installing or upgrading pip in the virtual
+
+                        environment (pip is bootstrapped by default)
+
+  --prompt PROMPT       Provides an alternative prompt prefix for this
+
+                        environment.
+
+  --upgrade-deps        Upgrade core dependencies: pip setuptools to the
+
+                        latest version in PyPI
+
+Once an environment has been created, you may wish to activate it, e.g. by
+
+sourcing an activate script in its bin directory..
+[[Values]]
+= Values
+> function canMakeHTTPSRequest() {
+
+  return typeof globalThis.Child #Root_Link XMLHTTPSRequest(*0) === 'function';
+
+}
+
+console.log(canMakeHTTPSRequest(*));
+
+// expected output Web-Workers (browser): true;
 The Certification Program Test Plan document defines the detailed requirements for generating the certification images. This is done in Section 4. Unless otherwise specified, all models are lit with a neutral image-base-light (IBL) and are displayed against a uniform white background. All certification images has to be of size 1024x1024 (exact size) displayed according to the embedded cameras. The five retail models have three cameras each. One of the analytical models (spheres) is displayed in four different IBLs. All certification images need to be created according to the rules specified in the Test Plan document.
+>>> fx/certification
 
 [[models-criteria]]
 = Models Criteria
 Each model is separately listed with a discussion of the criteria for certification for each.
 
 [[analytical-test-objects]]
-== Analytical Test Objects
+= Analytical Test Objects
 Evaluation Criteria: Analytical test object renders will be evaluated for color parity and material behavior. The Render Creation Document includes information and recommendations for calibration. A maximum of 5% deviation from Reference Renders sRGB pixel values is allowed. Additionally the behavior of metallic and roughness values on the two bottom rows of sphere and cube objects should display similarly, exhibiting the expected PBR material qualities and representing the full range of roughness from not at all to fully rough.
 
 [[analytical-spheres]]
-=== Analytical Spheres
+= Analytical Spheres
 
 .Colored Spheres with Neutral IBL
 image:../models/AnalyticalSpheres/rr-AnalyticalSpheres.png[pdfwidth=7in,align=left]
@@ -77,7 +154,7 @@ _A collection of colored spheres with studio lighting IBL._
 
 
 [[analytical-cubes]]
-=== Analytical Cubes
+= Analytical Cubes
 
 .Colored Cubes with Neutral IBL
 image:../models/AnalyticalCubes/rr-AnalyticalCubes.png[pdfwidth=7in,align=left]
@@ -256,6 +333,20 @@ _Green chair model showing another detail of correct texture transform in the gr
 Above picture illustrates the region under the chair without the transformation extension enabled. When the extension is not working as intended, this area will display a texture transformation several times larger than intended for the brown fabric in particular as seen above.
 
 Using the User camera, the wood-laquer on the armchair should be clearly visible when using the neutral IBL, as a semi-matte finish.
+
+[[change-log]]
+= Change Log
+
+The following table highlights the changes to this document made since initial release.
+
+.Change Log
+[width="100%",cols="^10%,>20%,<70%",frame="topbot",options="header"]
+|==========================
+| **Version** | **Release Date** | **Change**
+| V1.0.0 | 2021-05-31 | Initial release
+| V1.1.1 | 2021-09-23 | Change certificant image size to exactly 1024^2
+|==========================
+
 
 [[copyright-license]]
 = Copyright and License
