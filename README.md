@@ -1,4 +1,4 @@
-# Khornos 3D Commerce Certification Program
+# Khronos 3D Commerce Certification Program
 
 ![3D Commerce Certified Mark](./documents/images/3DCommerce-Certified.png)
 
