@@ -17,7 +17,11 @@ The glTF models can be viewed with the [3D Commerce Configured Sample Viewer](ht
 
 ## Scope
 
-This first release of the Certification Program addresses single products in a well-lit neutral background studio stage, as would be found in a typical single product studio photo-shoot. Future versions of the Certification Program will test a wider range of lighting conditions and product environments. 
+This first release of the Certification Program addresses single products in a well-lit neutral background studio stage, as would be found in a typical single product studio photo-shoot. Future versions of the Certification Program will test a wider range of lighting conditions and product environments.  
+At this point of time, the Certification Program verifies the GPU output, which is quantifiable and replicable. It doesn’t account for any of the host of other factors that inform visual perception though, from hardware color calibration to viewing environment, to subjective perception.  
+A certified viewer is free to utilize Gamma correction, Tone mapping or any other required transfer function.  
+
+![GPU Output](./documents/images/GPU-Output.png)
 
 ## Certified Viewer Registry
 
